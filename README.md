@@ -1,6 +1,6 @@
 # BBQ Restaurant
 
-![img](https://cdn.dribbble.com/users/46549/screenshots/14765563/media/368910b3bada7e9b2324e9337ac7cddc.jpg?compress=1&resize=400x310)
+![img](https://cdn.dribbble.com/users/46549/screenshots/14765563/media/368910b3bada7e9b2324e9337ac7cddc.jpg?compress=1&resize=400x320)
 
 [![react](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
 [![sass](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)](https://sass-lang.com/)
