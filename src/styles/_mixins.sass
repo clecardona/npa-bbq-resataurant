@@ -1,0 +1,38 @@
+@mixin flex-full-centered
+    display: flex
+    justify-content: center
+    align-items: center
+
+@mixin grid-centered
+    display: grid
+    align-items: center
+
+@mixin grid-modal-item
+    display: grid
+    grid-template-columns: 1fr 40%
+    align-items: center
+    padding: 6px 12px
+
+@mixin grid-modal-notes
+    display: grid
+    grid-template-rows: min-content minmax(min-content,60px)
+    gap: 6px
+    align-items: center
+    padding: 6px 12px
+    p
+        height: 100%
+        width: 100%
+        background: $white
+        border-radius: 8px
+        padding: 8px
+
+@mixin absolute-centered
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%,-50%)
+
+@mixin absolute-horizontal-centered
+    position: absolute
+    left: 50%
+    transform: translateX(-50%)

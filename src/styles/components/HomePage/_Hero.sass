@@ -1,17 +1,25 @@
 .section-hero
-  position: relative
-  height: calc(100vh - 40px)
+  @include flex-full-centered
+  min-height: calc(100vh - 160px )
 
-  display: grid
-  grid-template-columns: 1fr 1fr
-  grid-template-rows: 1fr min-content min-content 1fr
-  grid-template-areas: " .img" "title img" "subtitle img" ".img"
+  .wrapper
+    z-index: 1
+    width: 100%
+    display: grid
+    justify-items: center
+    align-items: center
+    grid-template-columns: 1fr 1fr
+    grid-template-rows: 1fr min-content min-content 1fr
+    grid-template-areas: " img img" "title title" "subtitle subtitle" "btn btn"
+  @media screen and (min-width: $tabletBreakpoint)
+    grid-template-rows: 1fr min-content min-content 1fr
+    grid-template-areas: " .img" "title img" "subtitle img" ".img"
 
-  justify-items: center
-  align-items: center
+    justify-items: center
+    align-items: center
 
-  overflow: hidden
-  background: $redDark
+    overflow: hidden
+    background: $black
 
   h1,
   h2
@@ -20,12 +28,27 @@
 
   h1
     grid-area: title
-  h2
+  h3
     grid-area: subtitle
     font-weight: 200
 
   .right-illustration
     grid-area: img
-    height: 300px
+    width: 200px
     object-fit: cover
     opacity: 0.8
+    margin: 24px 0
+
+  .btn
+    grid-area: btn
+    align-self: end
+    margin-bottom: 40px
+
+  .hero
+    z-index: 0
+    height: calc(100vh - 160px )
+    width: 100vw
+    object-fit: cover
+    filter: blur(2px) brightness(.15)
+
+    @include absolute-centered

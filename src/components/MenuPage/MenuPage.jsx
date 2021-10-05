@@ -1,9 +1,9 @@
 import React from "react";
 import menu from "../../assets/menuItems.json";
 import { NavLink } from "react-router-dom";
-import ButtonForward from "../../components/shared/ButtonForward";
+import ButtonForward from "../shared/ButtonForward";
 
-export default function Menu() {
+export default function MenuPage() {
   const MenuItems = menu.map((item) => {
     return (
       <article key={item.id}>
