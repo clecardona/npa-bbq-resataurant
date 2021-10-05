@@ -1,0 +1,85 @@
+.section-products {
+  @media only screen and (min-width: $desktopBreakpoint) {
+    width: 800px;
+    margin: auto;
+  }
+  article {
+    @media only screen and (min-width: $desktopBreakpoint) {
+      border: 1px solid $grayLight;
+    }
+    display: grid;
+    grid-template-columns: 44% 1fr;
+    grid-template-rows: min-content 1fr min-content;
+
+    @media only screen and (min-width: 500px) {
+      grid-template-rows: min-content 1fr 1fr;
+    }
+
+    grid-template-areas:
+      "img title "
+      "img description"
+      "img link";
+
+    border-bottom: 1px solid $grayLight;
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+    @media only screen and (min-width: $desktopBreakpoint) {
+      padding-bottom: 0;
+    }
+    &:last-child {
+      border-bottom: none;
+      @media only screen and (min-width: $desktopBreakpoint) {
+        border-bottom: 1px solid $grayLight;
+      }
+    }
+    img {
+      grid-area: img;
+      width: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+    h2,
+    p,
+    a {
+      padding: 0 25px;
+    }
+    h2 {
+      grid-area: title;
+      justify-self: center;
+      text-align: left;
+      width: 100%;
+      max-width: 350px;
+      text-transform: capitalize;
+      @media only screen and (min-width: $desktopBreakpoint) {
+        padding-top: 30px;
+      }
+    }
+    p {
+      grid-area: description;
+      justify-self: center;
+      text-align: justify;
+      text-justify: inter-character;
+      hyphens: auto;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      height: 100%;
+      max-width: 350px;
+      @media only screen and (min-width: $desktopBreakpoint) {
+        padding-top: 20px;
+      }
+    }
+    a {
+      grid-area: link;
+      justify-self: center;
+
+      @media only screen and (min-width: $desktopBreakpoint) {
+        margin: 12px 0;
+      }
+
+      width: max-content;
+      h3 {
+        font-size: 15px;
+      }
+    }
+  }
+}

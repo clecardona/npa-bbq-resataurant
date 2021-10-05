@@ -1,12 +1,14 @@
 import "./styles/base.scss";
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import HomePage from "./pages/1-Home Page/HomePage";
-import CategoryPage from "./pages/2-Category Page/CategoryPage";
-import ProductPage from "./pages/3-Product Page/ProductPage";
-import ContactPage from "./pages/4-Contact Page/ContactPage";
+
+import Page404 from "./components/404";
+import CategoryPage from "./components/Category/CategoryPage";
+import ContactPage from "./components/Contact/ContactPage";
+import HomePage from "./components/HomePage/HomePage";
+import ProductPage from "./components/Product/ProductPage";
+import Header from "./components/shared/Header";
+import Footer from "./components/shared/Footer";
 
 export default function App() {
   return (
@@ -15,17 +17,13 @@ export default function App() {
         <Header />
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route exact path="/menu/:category" component={CategoryPage} />
-          <Route
-            exact
-            path="/menu/:category/:productID"
-            component={ProductPage}
-          />
-          <Route exact path="/contact" component={ContactPage} />
+          <Route path="/menu/:category/:productID" component={ProductPage} />
+          <Route path="/menu/:category" component={CategoryPage} />
+          <Route path="/contact" component={ContactPage} />
+          <Route path="/" component={Page404} />
         </Switch>
+        <Footer />
       </Router>
-
-      <Footer />
     </div>
   );
 }

@@ -1,0 +1,51 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+}
+
+div {
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  margin-top: 20%;
+  height: 44px;
+  width: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Courier New", Courier, monospace;
+  background: red;
+  padding: 20px;
+  color: white;
+  border-radius: 200px;
+  text-decoration: none;
+  box-shadow: 3px 3px 8px black;
+  font-size: 18px;
+}
+a:hover {
+  background: rgb(219, 20, 20);
+  transform: scale(1.1);
+  transition: ease-in 0.3s;
+}

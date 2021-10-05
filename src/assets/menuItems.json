@@ -2,13 +2,13 @@
   {
     "id": 1,
     "name": "dishes",
-    "description": "Our dishes are inspired by the seasons, the ingredients we love, the trips that have taken us to other countries, meals shared with family or friends.",
+    "description": "Our dishes are inspired by the seasons, the ingredients we love, our trips to other countries, meals shared with family or friends.",
     "imageURL": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/cauliflower-tacos-1628779692.jpg?crop=0.645xw:0.645xh;0.238xw,0.169xh&resize=980:*"
   },
   {
     "id": 2,
     "name": "desserts",
-    "description": " Our desserts are homemade, and products come from smal local producers. We aim to reduce sugar as much as possible. Click and discover.",
+    "description": " Our desserts are homemade with products from small local producers. We aim to reduce sugar as much as possible. Click and discover.",
     "imageURL": "https://vegandesserts.be/wp-content/uploads/2020/07/vegan2-1.png"
   },
   {

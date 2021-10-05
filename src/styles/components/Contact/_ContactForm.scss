@@ -1,0 +1,60 @@
+.section-form_contact {
+  @media only screen and (min-width: $desktopBreakpoint) {
+    width: 800px;
+    margin: auto;
+  }
+
+  h2 {
+    padding: 0;
+  }
+}
+form {
+  display: grid;
+  grid-template-rows: repeat(5, min-content) 1fr;
+  padding: 12px;
+
+  align-items: center;
+
+  @media only screen and (min-width: $desktopBreakpoint) {
+    border: 1px solid $grayDark;
+    border-radius: 20px;
+    margin: 12px;
+    padding: 30px 80px;
+  }
+
+  label {
+    width: 100%;
+
+    .label-header {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 30px 0 0;
+      margin: 3px 0;
+    }
+    .verif {
+      color: $redDark;
+      font-weight: 300;
+      font-size: 14px;
+      text-align: left;
+    }
+
+    input {
+      box-sizing: border-box;
+      padding: 0 30px;
+      margin-bottom: 15px;
+      width: 100%;
+    }
+  }
+  :nth-child(5) {
+    justify-self: center;
+  }
+
+  .btn-main {
+    margin: 24px 0;
+    width: 140px;
+
+    @media only screen and (min-width: $desktopBreakpoint) {
+      width: 300px;
+    }
+  }
+}

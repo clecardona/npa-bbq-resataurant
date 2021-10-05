@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "reference": "nameSettings",
+    "settings": {
+      "type": "text",
+      "label": "Enter your full name",
+      "placeholder": "Clement Cardona",
+      "alert": "Please enter a valid name ( > 3 characters)"
+    }
+  },
+  {
+    "id": 2,
+    "reference": "emailSettings",
+    "settings": {
+      "type": "email",
+      "label": "Enter your email",
+      "placeholder": "clecardona@gmail.com",
+      "alert": "Please enter a valid email"
+    }
+  },
+  {
+    "id": 3,
+    "reference": "dateSettings",
+    "settings": {
+      "type": "date",
+      "label": "Enter a date",
+      "placeholder": "YYYY-MM-DD",
+      "alert": "Please enter a valid date (YYYY-MM-DD)"
+    }
+  },
+  {
+    "id": 4,
+    "reference": "timeSettings",
+    "settings": {
+      "label": "Enter a time",
+      "type": "time",
+      "placeholder": "HH:MM",
+      "alert": "Please enter a valid time (HH:MM)"
+    }
+  }
+]

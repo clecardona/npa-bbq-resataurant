@@ -1,0 +1,45 @@
+.section-nutrition_facts {
+  padding: 0 12px;
+  @media only screen and (min-width: $desktopBreakpoint) {
+    width: 800px;
+    margin: auto;
+  }
+  .separator {
+    background: black;
+    height: 5px;
+    width: 100%;
+  }
+
+  .calories {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .daily_value {
+    text-align: right;
+  }
+  h2 {
+    padding: 0;
+    margin: 0;
+  }
+  table,
+  tbody {
+    width: 100%;
+  }
+  tr {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    text-transform: capitalize;
+    border-bottom: 1px solid $grayDark;
+
+    &:nth-child(2),
+    &:nth-child(6),
+    &:nth-child(7) {
+      h3 {
+        font-weight: 200;
+        text-indent: 15px;
+      }
+    }
+  }
+}

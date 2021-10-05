@@ -1,0 +1,23 @@
+.page-contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  section {
+    margin-bottom: 18px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid $grayDark;
+    @media only screen and (min-width: $desktopBreakpoint) {
+      border-bottom: none;
+    }
+    &:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+    h2,
+    ul {
+      padding: 6px 12px;
+    }
+  }
+}

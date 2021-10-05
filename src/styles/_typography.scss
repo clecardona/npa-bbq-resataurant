@@ -1,7 +1,7 @@
 a,
 a:visited,
 a:active {
-  color: inherit;
+  //color: inherit;
   text-decoration: inherit;
 }
 h1,
@@ -32,27 +32,27 @@ h2 {
   font-weight: 400;
   line-height: 28px;
   @media only screen and (min-width: $desktopBreakpoint) {
-    font-size: 42px;
+    font-size: 22px;
     line-height: unset;
   }
 }
 h3 {
   font-family: "Poppins", sans-serif;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 400;
   line-height: 22px;
   @media only screen and (min-width: $desktopBreakpoint) {
-    font-size: 17px;
+    font-size: 16px;
   }
 }
 p,
 h4 {
   font-family: "Poppins", sans-serif;
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 100;
-  //line-height: 17px;
+  line-height: 17px;
   @media only screen and (min-width: $desktopBreakpoint) {
-    font-size: 18px;
+    font-size: 14px;
     line-height: unset;
   }
 }

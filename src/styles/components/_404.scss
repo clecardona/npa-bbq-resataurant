@@ -1,0 +1,35 @@
+.page-404 {
+  position: relative;
+  overflow: hidden;
+
+  .background {
+    height: calc(100vh - 50px - 75px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      padding-top: 30px;
+      height: 70%;
+      object-fit: cover;
+      opacity: 0.8;
+    }
+  }
+
+  .backhome {
+    position: absolute;
+    bottom: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    a {
+      box-shadow: 3px 3px 4px rgb(70, 63, 63);
+      &:hover {
+        transform: translateX(-5px);
+        transition: ease 0.3s;
+      }
+    }
+
+    align-items: center;
+  }
+}

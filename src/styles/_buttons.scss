@@ -8,6 +8,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0 12px;
 }
 
 .btn-main {
@@ -18,7 +19,17 @@ button {
   h3 {
     color: $white;
     text-transform: capitalize;
-    padding: 0 24px;
+  }
+
+  .icon-btn {
+    width: 20px;
+    height: 20px;
+    margin: 6px;
+    filter: invert(1);
+  }
+  &:hover {
+    transition: ease 0.3s;
+    background-color: $redDark;
   }
 }
 
@@ -30,21 +41,59 @@ button {
   h3 {
     color: $red;
     text-transform: capitalize;
-    padding: 0 24px;
+  }
+  .icon-btn {
+    width: 20px;
+    height: 20px;
+    margin: 6px;
+    filter: invert(0.5) sepia(1) saturate(5) hue-rotate(-45deg);
+  }
+  &:hover {
+    transition: ease 0.3s;
+    color: $redDark;
+    border-color: $redDark;
+    h3 {
+      color: $redDark;
+    }
+    svg path {
+      fill: $redDark;
+    }
   }
 }
 
 .pill {
-  height: 30px;
+  height: 25px;
+  cursor: default;
+
+  &:hover {
+    color: $red;
+    border-color: $red;
+  }
+
+  h3 {
+    font-size: 14px;
+    margin-left: 3px;
+    // padding: 0 12px;
+    &:hover {
+      color: $red;
+    }
+  }
 }
 
 input {
   border: 1px $black solid;
   height: 30px;
   border-radius: 30px;
-  background-color: transparent;
-}
-input[type="text"],
-input[type="email"] {
   background-color: $grayLight;
+}
+
+input[type="submit"] {
+  color: $white;
+}
+
+.btn-send {
+  &:disabled {
+    background: rgb(228, 228, 228);
+    border-color: rgb(228, 228, 228);
+  }
 }

@@ -1,0 +1,58 @@
+.page-category {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  .btn-300 {
+    width: 300px;
+    margin: 24px;
+    @media only screen and (min-width: $desktopBreakpoint) {
+      margin: 64px;
+    }
+  }
+}
+.section-header {
+  width: 100%;
+  background: $red;
+  height: 150px;
+  @media only screen and (min-width: $desktopBreakpoint) {
+    height: 280px;
+  }
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: $white;
+  text-transform: capitalize;
+
+  h1 {
+    font-weight: 100;
+    padding-top: 50px;
+    @media only screen and (min-width: $desktopBreakpoint) {
+      padding-top: 70px;
+    }
+  }
+}
+
+.section-description {
+  width: 100%;
+  background: $grayLight;
+
+  @media only screen and (min-width: $desktopBreakpoint) {
+    width: 800px;
+    margin: auto;
+    margin-top: 20px;
+  }
+  p {
+    padding: 12px;
+
+    max-width: 350px;
+    text-align: justify;
+    hyphens: auto;
+    @media only screen and (min-width: $desktopBreakpoint) {
+      padding: 25px 12px;
+    }
+  }
+}

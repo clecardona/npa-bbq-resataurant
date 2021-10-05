@@ -1,35 +1,42 @@
-/* variables imports*/
-@import "./variables";
-
-/* general imports*/
-@import "./App";
-@import "./typography";
-@import "./buttons";
-@import "./layouts";
-
-/* page imports*/
-@import "./Components/Contact";
-@import "./Components/CategoryPage";
-@import "./Components/ProductPage";
-
-/* components imports*/
-@import "./Components/Header";
-@import "./Components/Footer";
-@import "./Components/NavigationBar";
-@import "./Components/HeroSection";
-@import "./Components/MenuSection";
-@import "./Components/ProductSection";
-
-@import "./Components/IngredientsSection";
-@import "./Components/ProductDescriptionSection";
-@import "./Components/NutritionFactsSection";
-
-@import "./Components/ContactDescriptionSection";
-@import "./Components/FormContactSection";
-@import "./Components/LocalisationSection";
-
 /* font imports*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* variables imports */
+@import "./variables";
+
+/* general imports */
+@import "./general-settings";
+@import "./typography";
+@import "./buttons";
+
+/* COMPONENTS */
+/* Home Page */
+@import "./components/HomePage/Hero";
+@import "./components/HomePage/Menu";
+
+/* Category  page*/
+@import "./components/Category/CategoryPage";
+@import "./components/Category/Products";
+
+/* Product page*/
+@import "./components/Product/ProductPage";
+@import "./components/Product/Description";
+@import "./components/Product/Ingredients";
+@import "./components/Product/NutritionFacts";
+
+/* Contact page */
+@import "./components/Contact/ContactPage";
+@import "./components/Contact/ContactDescription";
+@import "./components/Contact/ContactForm";
+@import "./components/Contact/Localisation";
+
+/* shared components imports */
+@import "./components/shared/Header";
+@import "./components/shared//Footer";
+@import "./components/shared/NavBar";
+
+/* 404 */
+@import "./components/404";
 
 /* animations imports*/
 @import "./animations";

@@ -1,14 +1,15 @@
 /* Media queries */
 $desktopBreakpoint: 1000px;
-
+$tabletBreakpoint: 750px;
 /** colors **/
 $grayDark: #c4c4c4;
 $grayLight: #eeeeee;
 $white: white;
 $black: black;
-$red: rgb(207, 51, 51);
-$redLight: #f9dddd;
 
+$redLight: #f9dddd;
+$red: #eb5757;
+$redDark: rgb(207, 51, 51);
 /*** fonts ***/
 /* fonts familie s*/
 
@@ -24,7 +25,7 @@ $Bold: 800;
 
 /* sizes */
 
-$header-height: 70px;
+$header-height: 40px;
 $footer-height: 85px;
 
 :root {
