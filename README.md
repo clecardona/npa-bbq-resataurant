@@ -1,6 +1,6 @@
-# Vegan Restaurant
+# BBQ Restaurant
 
-![img](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy1HgNjTGdzMbLLju71aSo8w5-3KkhsKGxug&usqp=CAU)
+![img](https://cdn.dribbble.com/users/46549/screenshots/14765563/media/368910b3bada7e9b2324e9337ac7cddc.jpg?compress=1&resize=600x410)
 
 [![react](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
 [![sass](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)](https://sass-lang.com/)
@@ -11,8 +11,8 @@ This project was bootstrapped with Create React App.
 
 ## 1. Content
 
-This is a Vegan Restaurant website.
-[Go to website](https://npa-vegan-restaurant.web.app/)
+This is a BBQ Restaurant website.
+[Go to website](https://npa-bbq-restaurant.web.app/)
 
 ## 2. Setup
 
@@ -27,13 +27,15 @@ These are the instructions to run the project:
 
 ## 3. Dependencies
 
-- Firebase Cloud Hosting
+- Firebase Hosting
+- Firebase Firestore DB
+- Firebase Storage
 
 ## 4. Project organization
 
 ### 4.1 Requirement gathering
 
-[Google Docs link](https://docs.google.com/document/d/1qjRTB7ZgfW6TSQOnHnEzol_eH9fQO23ZEX8JZ5CScaM/edit)
+[Google Docs link](https://docs.google.com/document/d/1TQwhMYjaitkz9uWDMuHwNVJ41GdFJif0dMD-3zO3eJQ/edit
 
 ### 4.2 Project spreadsheet
 
