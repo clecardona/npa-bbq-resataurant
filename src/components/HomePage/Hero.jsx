@@ -1,4 +1,5 @@
 import React from "react";
+import caravan from "../../assets/img/caravan.svg";
 
 export default function Hero() {
   const heroURL =
@@ -7,13 +8,7 @@ export default function Hero() {
     <section className="section-hero">
       <h1>HUNGRY YETI BBQ</h1>
       <h2>Because meat matters</h2>
-      <img
-        className="illustration"
-        alt="bunny"
-        src="https://clecardona.com/npa/img/rabbit.svg"
-      />
-
-      <img className="background" src={heroURL} alt="" />
+      <img className="right-illustration" src={caravan} alt="" />
     </section>
   );
 }

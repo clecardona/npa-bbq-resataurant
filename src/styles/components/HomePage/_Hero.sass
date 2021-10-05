@@ -1,0 +1,31 @@
+.section-hero
+  position: relative
+  height: calc(100vh - 40px)
+
+  display: grid
+  grid-template-columns: 1fr 1fr
+  grid-template-rows: 1fr min-content min-content 1fr
+  grid-template-areas: " .img" "title img" "subtitle img" ".img"
+
+  justify-items: center
+  align-items: center
+
+  overflow: hidden
+  background: $redDark
+
+  h1,
+  h2
+    color: white
+    line-height: 80%
+
+  h1
+    grid-area: title
+  h2
+    grid-area: subtitle
+    font-weight: 200
+
+  .right-illustration
+    grid-area: img
+    height: 300px
+    object-fit: cover
+    opacity: 0.8
