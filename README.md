@@ -1,6 +1,6 @@
 # BBQ Restaurant
 
-![img](https://cdn.dribbble.com/users/46549/screenshots/14765563/media/368910b3bada7e9b2324e9337ac7cddc.jpg?compress=1&resize=600x410)
+![img](https://cdn.dribbble.com/users/46549/screenshots/14765563/media/368910b3bada7e9b2324e9337ac7cddc.jpg?compress=1&resize=400x310)
 
 [![react](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
 [![sass](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)](https://sass-lang.com/)
@@ -39,16 +39,16 @@ These are the instructions to run the project:
 
 ### 4.2 Project spreadsheet
 
-[Google Spreadsheets link](https://docs.google.com/spreadsheets/d/1cLl1IrPkyIr2tL5Zo3IiA0pBxB_31CjOz4WOs9xyZYc/edit#gid=722109281)
+[Google Spreadsheets link](https://docs.google.com/spreadsheets/d/1aQxur7UsDnGhJ3KcMwhKPWKJmI3yUjBt2uX0D1R6AQs/edit)
 
 ### 4.3 Users flow chart
 
-[Whimsical Chart](https://whimsical.com/users-flow-Hfh9d7iWJeX9hP67m5pigR)
+[Whimsical Chart](https://whimsical.com/user-flow-BNMa1mMkeGHhUTHuRHhiGY@7YNFXnKbYjUDUcFPzdJ44)
 
 ### 4.4 Design mockup
 
-[Figma mockup](https://www.figma.com/file/gcUsqGeK6qtCe4ULQApg6Y/NPA-_Vegan-website?node-id=0%3A1)
+[Figma mockup](https://www.figma.com/file/nWFxTFa2UXzKO8MgZ0Cb52/NPA-_BBQ_clement_cardona?node-id=105%3A220)
 
 ### 4.5 Component tree
 
-[Whimsical Component Tree](https://whimsical.com/component-tree-T2sZjtjagdgQUzMMhyvW3T)
+[Whimsical Component Tree](https://whimsical.com/component-tree-EAgW5a3ZiJRD21vEFvBRSH@7YNFXnKbYjpTM7AtXj4NG)
