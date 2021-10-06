@@ -2,8 +2,9 @@ import { useState } from "react";
 import form from "../../assets/form.json";
 import FormItem from "../../components/shared/FormItem";
 import FormSubmit from "../../components/shared/FormSubmit";
+import { createDoc } from "../../scripts/fireStore";
 
-export default function AddCategory() {
+export default function AddCategory({ database }) {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [imageURL, setImageURL] = useState(
@@ -11,17 +12,20 @@ export default function AddCategory() {
   );
 
   //Methods
-  function addCategory(event, catName, catDescription, catImageURL) {
-    // add the category to firestore db
-    event.preventdefault();
-    alert("name:" + name + "/n  description: " + description);
-    //return null;
+
+  function addCategory(event) {
+    event.preventDefault();
+    const newCategory = {
+      name: name,
+      description: description,
+      imageURL: imageURL,
+    };
+
+    createDoc(database, "categories", newCategory);
   }
 
   function addImage(event) {
     // add the category to firestore db
-    event.preventdefault();
-    alert("image added");
     //return null;
   }
 
@@ -29,6 +33,7 @@ export default function AddCategory() {
     <section className="section-admin">
       <h2>Add new Category</h2>
       <form
+        className="form-admin"
         onSubmit={(event, name, description, imageURL) =>
           addCategory(event, name, description, imageURL)
         }

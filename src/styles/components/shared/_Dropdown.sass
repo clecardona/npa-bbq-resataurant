@@ -1,0 +1,30 @@
+
+.dropdown
+    position: relative
+    display: flex
+    flex-direction: column
+    width: 100%
+
+    .caret
+
+        background: $gray3
+        height: max-content
+        width: 100%
+        padding: 16px 8px 8px 8px
+        border-radius: 0 0 12px 12px
+        box-shadow: 0 5px 5px rgba(0,0 ,0 ,.05 )
+
+        li .dropdown-item
+            width: 100%
+            display: flex
+            justify-content: start
+            align-items: center
+            cursor: pointer
+            padding: 4px 24px
+            margin: 3px 0
+            border-radius: 8px
+            color: $white
+            text-transform: capitalize
+
+            &:hover
+                background: $gray2

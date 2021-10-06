@@ -45,7 +45,7 @@
     "settings": {
       "label": "",
       "type": "text",
-      "placeholder": "Enter category",
+      "placeholder": "Enter title",
       "alert": "Please enter a valid name(> 3 chars)",
       "className": "input-title"
     }
@@ -55,13 +55,13 @@
     "settings": {
       "label": "",
       "type": "text",
-      "placeholder": "Enter category description",
+      "placeholder": "Enter description",
       "alert": "Please enter a valid description (10-150 chars)",
       "className": "input-description"
     }
   },
   {
-    "id": 6,
+    "id": 7,
     "settings": {
       "label": "",
       "type": "text",

@@ -1,14 +1,26 @@
 .section-admin
 
+    form
+        display: flex
+        flex-direction: column
+        justify-content: flex-start
+
+        width: 100%
+        max-width: 800px
+        margin: auto
+
     h2
         padding: 0 12px
-    .input-title
-        height: 44px
+
+    .input-title,.input-ingredient
+        height: $mob-button-height
+
     .input-description
 
         height: 120px
 
     .add
+        align-self: flex-start
         display: grid
         grid-template-columns: min-content 1fr
         align-items: center

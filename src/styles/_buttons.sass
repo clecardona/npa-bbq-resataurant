@@ -90,3 +90,33 @@ input[type="submit"]
   border-radius: 44px
   background: $red
   color: $white
+
+.select-ghost
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding: 0 24px
+
+  background: none
+  border: 2px solid $red
+  border-radius: 8px
+  width: 100%
+
+  h4
+    color: $red
+    text-transform: capitalize
+    font-weight: 400
+
+  .dropdown-arrow
+    width: 20px
+    height: 20px
+    margin: 6px
+    filter: invert(0.5) sepia(1) saturate(5) hue-rotate(-45deg)
+
+  &:hover
+    transition: ease 0.3s
+    background: $red
+    h4
+      color: $white
+    .dropdown-arrow
+      filter: invert(0)

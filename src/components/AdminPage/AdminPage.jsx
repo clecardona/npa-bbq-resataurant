@@ -10,7 +10,7 @@ export default function AdminPage() {
   const [meals, setMeals] = useState([]);
   const [categories, setCategories] = useState([]);
   const [status, setStatus] = useState(0); // 0: loading, 1: loaded, 2: error
-  const [isCategory, setIsCategory] = useState(true);
+  const [isCategory, setIsCategory] = useState(false);
 
   // Properties
   const database = getFirestore(firebaseInstance);
@@ -40,7 +40,7 @@ export default function AdminPage() {
       });
   }, [database]);
 
-  console.log(categories);
+  //console.log(categories);
 
   const Meals = meals.map((item) => {
     return <p key={item.id}>{item.title}</p>;
@@ -63,7 +63,11 @@ export default function AdminPage() {
         {status === 1 && <ul>{Meals}</ul>} */}
         </section>
         <Sorter hook={[isCategory, setIsCategory]} />
-        {isCategory ? <AddCategory /> : <AddMeal />}
+        {isCategory ? (
+          <AddCategory categories={categories} database={database} />
+        ) : (
+          <AddMeal categories={categories} database={database} />
+        )}
       </div>
     </main>
   );

@@ -1,8 +1,29 @@
-import React from "react";
+import { useState, useEffect } from "react";
+import { getCollection } from "../../scripts/fireStore";
 
-import meals from "../../assets/meals.json";
+import firebaseInstance from "../../scripts/firebase";
+import { getFirestore } from "firebase/firestore/lite";
+//import meals from "../../assets/meals.json";
 
 export default function Products({ category }) {
+  const [meals, setMeals] = useState([]);
+  const [status, setStatus] = useState(0); // 0: loading, 1: loaded, 2: error
+
+  const database = getFirestore(firebaseInstance);
+
+  // Methods
+  useEffect(() => {
+    getCollection(database, "meals")
+      .then((result) => {
+        setMeals(result);
+        setStatus(1);
+      })
+      .catch((error) => {
+        console.log(error);
+        setStatus(2);
+      });
+  }, [database]);
+
   const listOfProducts = getRelatedFood(meals, category);
 
   function getRelatedFood(array, categoryOfFood) {
@@ -22,5 +43,13 @@ export default function Products({ category }) {
     );
   });
 
-  return <section className="section-products ">{ProductsItems}</section>;
+  return (
+    <>
+      {listOfProducts.length === 0 ? (
+        <h3>Category empty for now</h3>
+      ) : (
+        <section className="section-products ">{ProductsItems} </section>
+      )}
+    </>
+  );
 }

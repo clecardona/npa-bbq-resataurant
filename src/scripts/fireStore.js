@@ -1,10 +1,5 @@
 // NPM packages
-import {
-  Firestore,
-  collection,
-  getDocs,
-  addDoc,
-} from "firebase/firestore/lite";
+import { collection, getDocs, addDoc } from "firebase/firestore/lite";
 
 // Create file
 export async function createDoc(db, path, data) {

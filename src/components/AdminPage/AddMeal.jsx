@@ -2,8 +2,11 @@ import { useState } from "react";
 import form from "../../assets/form.json";
 import FormItem from "../../components/shared/FormItem";
 import FormSubmit from "../../components/shared/FormSubmit";
+import Dropdown from "../shared/Dropdown";
 
-export default function AddMeal() {
+import { createDoc } from "../../scripts/fireStore";
+
+export default function AddMeal({ categories }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [imageURL, setImageURL] = useState(
@@ -11,7 +14,6 @@ export default function AddMeal() {
   );
   const [ingredients, setIngredients] = useState([]);
 
-  //Methods
   function addMeal(event, catName, catDescription, catImageURL) {
     // add the meal to firestore db
     event.preventdefault();
@@ -26,6 +28,8 @@ export default function AddMeal() {
           addMeal(event, name, description, imageURL)
         }
       >
+        <Dropdown categories={categories} />
+
         <FormItem
           settings={form[4].settings}
           hook={[title, setTitle]}
@@ -38,14 +42,10 @@ export default function AddMeal() {
         />
         <FormItem
           settings={form[6].settings}
-          hook={[title, setTitle]}
+          hook={[ingredients, setIngredients]}
           isValid={true}
         />
-        <FormItem
-          settings={form[6].settings}
-          hook={[title, setTitle]}
-          isValid={true}
-        />
+
         <div className="add">
           <input type="file" className="btn-circle" />
           <h3>Select Meal image</h3>
