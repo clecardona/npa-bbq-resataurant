@@ -3,6 +3,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Page404 from "./components/404";
+import AdminPage from "./components/AdminPage/AdminPage";
 import CategoryPage from "./components/CategoryPage/CategoryPage";
 import ContactPage from "./components/Contact/ContactPage";
 import HomePage from "./components/HomePage/HomePage";
@@ -23,6 +24,7 @@ export default function App() {
           <Route path="/menu/:category/:productID" component={ProductPage} />
           <Route path="/menu/:category" component={CategoryPage} />
           <Route path="/contact" component={ContactPage} />
+          <Route path="/admin" component={AdminPage} />
           <Route path="/" component={Page404} />
         </Switch>
         <Footer />

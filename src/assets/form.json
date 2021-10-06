@@ -1,0 +1,73 @@
+[
+  {
+    "id": 1,
+    "settings": {
+      "type": "text",
+      "label": "Enter your full name",
+      "placeholder": "Clement Cardona",
+      "alert": "Please enter a valid name ( > 3 characters)",
+      "className": "input-name"
+    }
+  },
+  {
+    "id": 2,
+    "settings": {
+      "type": "email",
+      "label": "Enter your email",
+      "placeholder": "clecardona@gmail.com",
+      "alert": "Please enter a valid email",
+      "className": "input-email"
+    }
+  },
+  {
+    "id": 3,
+
+    "settings": {
+      "type": "date",
+      "label": "Enter a date",
+      "placeholder": "YYYY-MM-DD",
+      "alert": "Please enter a valid date (YYYY-MM-DD)",
+      "className": "input-date"
+    }
+  },
+  {
+    "id": 4,
+    "settings": {
+      "label": "Enter a time",
+      "type": "time",
+      "placeholder": "HH:MM",
+      "alert": "Please enter a valid time (HH:MM)",
+      "className": "input-time"
+    }
+  },
+  {
+    "id": 5,
+    "settings": {
+      "label": "",
+      "type": "text",
+      "placeholder": "Enter category",
+      "alert": "Please enter a valid name(> 3 chars)",
+      "className": "input-title"
+    }
+  },
+  {
+    "id": 6,
+    "settings": {
+      "label": "",
+      "type": "text",
+      "placeholder": "Enter category description",
+      "alert": "Please enter a valid description (10-150 chars)",
+      "className": "input-description"
+    }
+  },
+  {
+    "id": 6,
+    "settings": {
+      "label": "",
+      "type": "text",
+      "placeholder": "Enter ingredient",
+      "alert": "Please enter a valid ingredients (3-10 chars)",
+      "className": "input-ingredient"
+    }
+  }
+]

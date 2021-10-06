@@ -4,7 +4,6 @@ import { useParams, NavLink } from "react-router-dom";
 import foodData from "../../assets/meals.json";
 import Description from "./Description";
 import Ingredients from "./Ingredients";
-import NutritionFacts from "./NutritionFacts";
 import ButtonBack from "../../components/shared/ButtonBack";
 
 export default function ProductPage() {
@@ -23,7 +22,10 @@ export default function ProductPage() {
     <main className="page-product">
       <Description product={product} />
       <Ingredients product={product} />
-      <NutritionFacts product={product} />
+      <section className="section-price">
+        <div className="line" />
+        <h1>150 Kr</h1>
+      </section>
       <NavLink to={`/menu/${category}`} className="btn btn-main btn-300">
         <ButtonBack label="Go back" />
       </NavLink>
