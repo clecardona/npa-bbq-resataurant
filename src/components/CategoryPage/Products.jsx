@@ -1,11 +1,9 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-import ButtonForward from "../shared/ButtonForward";
 
-import foodData from "../../assets/foodItems.json";
+import meals from "../../assets/meals.json";
 
 export default function Products({ category }) {
-  const listOfProducts = getRelatedFood(foodData, category);
+  const listOfProducts = getRelatedFood(meals, category);
 
   function getRelatedFood(array, categoryOfFood) {
     return array.filter((item) => {
@@ -15,14 +13,12 @@ export default function Products({ category }) {
 
   const ProductsItems = listOfProducts.map((item) => {
     return (
-      <article key={item.id}>
+      <a key={item.id} href={`./${item.category}/${item.id}`} className="card">
         <img src={item.imageURL} alt="img" />
-        <h2>{item.title}</h2>
-        <p>{item.description}</p>
-        <NavLink to={`./${item.category}/${item.id}`} className="btn btn-ghost">
-          <ButtonForward label="View Product" />
-        </NavLink>
-      </article>
+        <h3 className="title">{item.title}</h3>
+        <p className="description">{item.description}</p>
+        <h2 className="price">120 Kr</h2>
+      </a>
     );
   });
 

@@ -1,0 +1,41 @@
+.page-category
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+  align-items: center
+
+  .btn-300
+    width: 300px
+    margin: 24px
+    @media only screen and (min-width: $desktopBreakpoint)
+      margin: 64px
+
+.section-header
+  width: 100%
+  background: $redDark
+  height: 150px
+  display: flex
+  justify-content: center
+  align-items: center
+
+  color: $white
+  text-transform: capitalize
+  @media only screen and (min-width: $desktopBreakpoint)
+    height: 280px
+
+  h1
+    font-weight: 200
+
+.section-description
+  width: 100%
+
+  @media only screen and (min-width: $desktopBreakpoint)
+    width: 800px
+    margin: auto
+    margin-top: 20px
+
+  p
+
+    padding: 24px
+
+  @include text-bloc

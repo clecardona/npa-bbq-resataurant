@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams, NavLink } from "react-router-dom";
 
-import foodData from "../../assets/foodItems.json";
+import foodData from "../../assets/meals.json";
 import Description from "./Description";
 import Ingredients from "./Ingredients";
 import NutritionFacts from "./NutritionFacts";

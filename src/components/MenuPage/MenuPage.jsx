@@ -1,21 +1,21 @@
 import React from "react";
-import menu from "../../assets/menuItems.json";
-import { NavLink } from "react-router-dom";
-import ButtonForward from "../shared/ButtonForward";
+import categories from "../../assets/categories.json";
 
 export default function MenuPage() {
-  const MenuItems = menu.map((item) => {
+  const MenuItems = categories.map((item) => {
     return (
-      <article key={item.id}>
+      <a href={`/menu/${item.name}`} className="card" key={item.id}>
         <img src={item.imageURL} alt="img" />
         <h2>{item.name}</h2>
         <p>{item.description}</p>
-        <NavLink to={`/menu/${item.name}`} className="btn btn-ghost">
-          <ButtonForward label="View Products" />
-        </NavLink>
-      </article>
+      </a>
     );
   });
 
-  return <section className="section-menu ">{MenuItems}</section>;
+  return (
+    <div className="page-menu">
+      <h1>- Menu -</h1>
+      <section className="section-menu ">{MenuItems}</section>
+    </div>
+  );
 }

@@ -1,14 +1,14 @@
 [
   {
     "id": 1,
-    "name": "dishes",
-    "description": "Our dishes are inspired by the seasons, the ingredients we love, our trips to other countries, meals shared with family or friends.",
+    "name": "chicken",
+    "description": "Come and discover our special chicken grill and roast. We offer a selection of home made marinades with fresh spices.",
     "imageURL": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/cauliflower-tacos-1628779692.jpg?crop=0.645xw:0.645xh;0.238xw,0.169xh&resize=980:*"
   },
   {
     "id": 2,
-    "name": "desserts",
-    "description": " Our desserts are homemade with products from small local producers. We aim to reduce sugar as much as possible. Click and discover.",
+    "name": "beef",
+    "description": "The masterpiece of a BBQ, cooked as you want it. Our beef is produced in Sweden and Argentina.",
     "imageURL": "https://vegandesserts.be/wp-content/uploads/2020/07/vegan2-1.png"
   },
   {

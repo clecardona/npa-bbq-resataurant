@@ -6,7 +6,7 @@
     "imageURL": "https://img.jamieoliver.com/jamieoliver/recipe-database/109469682.jpg?tr=w-330",
 
     "description": "Egg noodles with fresh pineaple and peas.Cooked in the wok. ",
-    "category": "dishes",
+    "category": "chicken",
     "ingredients": [
       ["pineapple", "pineapple"],
       ["Tofu", "tofu"],
@@ -72,7 +72,7 @@
     "imageURL": "https://img.jamieoliver.com/jamieoliver/recipe-database/92507785.jpg?tr=w-800,h-1066",
 
     "description": "A finger-licious stew made with 🤍 with greek tradition ",
-    "category": "dishes",
+    "category": "chicken",
     "ingredients": [
       ["Olives", "olives"],
       ["Zingy Lemon", "lemon"],
@@ -138,7 +138,7 @@
     "imageURL": "https://img.jamieoliver.com/jamieoliver/recipe-database/94741163.jpg?tr=w-800,h-1066",
 
     "description": "An oriental inspired tagine, with apricots, preserved lemons, topping a fine couscous. ",
-    "category": "dishes",
+    "category": "chicken",
     "ingredients": [
       ["Saffron", "spices"],
       ["Preserved Lemon", "lemon"],
@@ -204,7 +204,7 @@
     "imageURL": "https://img.jamieoliver.com/jamieoliver/recipe-database/83911434.jpg?tr=w-800,h-1066",
 
     "description": "Roasted roots in mediterrannean styles. Served with fresh herbs.",
-    "category": "dishes",
+    "category": "chicken",
     "ingredients": [
       ["Carrots", "carrot"],
       ["Paprika", "zucchini"],
@@ -271,7 +271,7 @@
     "imageURL": "https://img.jamieoliver.com/jamieoliver/recipe-database/99Icf3nwqKVA5EeKHEvIuu.jpg?tr=w-800,h-1066",
 
     "description": "Sweet yet tart rhubarb sorbet with salty, crunchy brittle – flavours and textures that go mad in your mouth.",
-    "category": "desserts",
+    "category": "beef",
     "ingredients": [
       ["Rhubarb", "other"],
       ["Pistachio", "other"],
@@ -338,7 +338,7 @@
     "imageURL": "https://img.jamieoliver.com/jamieoliver/recipe-database/oldImages/large/1424_36_1423759980.jpg?tr=w-800,h-1066",
 
     "description": "With tofu and dairy-free chocolate, these are a tasty vegan twist on regular chocolate mousse. ",
-    "category": "desserts",
+    "category": "beef",
     "ingredients": [
       ["Vanilla", "vanilla"],
       ["Hazelnuts", "nuts"],
@@ -405,7 +405,7 @@
     "imageURL": "https://img.jamieoliver.com/jamieoliver/recipe-database/ADNVV5zOKqq9e9y-wPNaXM.jpg?tr=w-800,h-1066",
 
     "description": "Sticky-sweet and topped with lightly spiced apples, this makes the perfect afternoon tea treat!",
-    "category": "desserts",
+    "category": "beef",
     "ingredients": [
       ["Lemon", "lemon"],
       ["Walnuts", "nuts"],
@@ -472,7 +472,7 @@
     "imageURL": "https://img.jamieoliver.com/jamieoliver/recipe-database/oldImages/large/722_1_1436866718.jpg?tr=w-800,h-1066",
 
     "description": "Mojito Fruit Salad is a refreshing, non-alcoholic fruit and berry salad that tastes just like a sweet mojito.",
-    "category": "desserts",
+    "category": "beef",
     "ingredients": [
       ["Brown sugar", "sugar"],
       ["Pineapple", "pineapple"],

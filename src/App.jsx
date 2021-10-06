@@ -3,13 +3,14 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Page404 from "./components/404";
-import CategoryPage from "./components/Category/CategoryPage";
+import CategoryPage from "./components/CategoryPage/CategoryPage";
 import ContactPage from "./components/Contact/ContactPage";
 import HomePage from "./components/HomePage/HomePage";
+import MenuPage from "./components/MenuPage/MenuPage";
 import ProductPage from "./components/ProductPage/ProductPage";
+
 import Header from "./components/shared/Header";
 import Footer from "./components/shared/Footer";
-import MenuPage from "./components/MenuPage/MenuPage";
 
 export default function App() {
   return (

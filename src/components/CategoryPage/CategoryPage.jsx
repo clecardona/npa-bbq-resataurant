@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams, NavLink } from "react-router-dom";
 
-import menuData from "../../assets/menuItems.json";
+import categories from "../../assets/categories.json";
 import Products from "./Products";
 import ButtonBack from "../shared/ButtonBack";
 
@@ -14,7 +14,7 @@ export default function CategoryPage() {
     })[0].description;
   }
 
-  const description = getCategoryDescription(menuData, category);
+  const description = getCategoryDescription(categories, category);
 
   return (
     <main className="page-category">
@@ -24,9 +24,10 @@ export default function CategoryPage() {
       <section className="section-description">
         <p>{description}</p>
       </section>
+
       <Products category={category} />
 
-      <NavLink to={`/`} className="btn btn-main btn-300">
+      <NavLink to={`/menu`} className="btn btn-main btn-300">
         <ButtonBack label="Go back" />
       </NavLink>
     </main>
