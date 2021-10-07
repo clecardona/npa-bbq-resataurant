@@ -1,8 +1,65 @@
 header
+  z-index: 10
   height: $header-height
 
   display: flex
-  justify-content: center
-  align-items: center
+  justify-content: flex-start
 
   background: $black
+  overflow: hidden
+  box-shadow: 0px 2px 4px rgba(0,0 ,0 ,0.3 )
+
+  .home
+    background: $white
+    height: 100%
+    width: 100px
+    @include flex-full-centered
+
+    img
+      width: 30px
+
+    &:hover img
+      @include color-svg-red
+
+  .home-shape
+    z-index: 3
+    position: relative
+
+    top: -$header-height
+    margin-right: 0px
+    height: 0px
+    width: 0px
+    border: $header-height solid transparent
+    border-left: 20px solid $white
+    background: transparent
+
+  nav
+    background: transparent
+    padding: 18px
+    position: absolute
+    top: 0
+    right: 0
+    height: $header-height
+    width: calc(100% - 100px)
+    max-width: 400px
+
+    z-index: 10
+    display: grid
+    justify-content: center
+    justify-items: center
+    align-items: center
+
+    grid-template-columns: repeat(3,1fr)
+    gap: 1rem
+
+    a
+      cursor: pointer
+      width: min-content
+      color: $grayLight
+      text-transform: capitalize
+      font-size: 14px
+      padding: 6px
+      border-bottom: 1px solid transparent
+      &:hover
+        border-bottom: 1px solid white
+        transition: ease .3s

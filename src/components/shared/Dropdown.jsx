@@ -9,11 +9,11 @@ export default function Dropdown({ categories, handleClick, category }) {
       <DropdownItem
         key={item.id}
         onClick={() => {
-          handleClick(item.name);
+          handleClick(item.title);
           setIsOpen(false);
         }}
       >
-        {item.name}
+        {item.title}
       </DropdownItem>
     );
   });

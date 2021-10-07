@@ -7,7 +7,7 @@ const database = getFirestore(firebaseInstance);
 
 export function getCurrentCategory(array, categoryOfFood) {
   return array.filter((item) => {
-    return item.name === categoryOfFood;
+    return item.title === categoryOfFood;
   })[0];
 }
 

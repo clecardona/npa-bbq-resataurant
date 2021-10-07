@@ -21,7 +21,7 @@
       grid-template-columns: 1fr 1fr
 
     .card
-      background: $redDark
+      background: $gray2
       color: $white
       border-radius: 8px
       overflow: hidden
@@ -63,5 +63,10 @@
       p
         grid-area: description
         overflow: hidden
+        white-space: nowrap
+        text-overflow: ellipsis
+
         height: 100%
+        width: 100%
+
       @include text-bloc

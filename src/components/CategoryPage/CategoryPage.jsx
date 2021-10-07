@@ -22,7 +22,7 @@ export default function CategoryPage() {
       {!categories.loading && categories.error === null && (
         <main className="page-category">
           <section className="section-header">
-            <h1>{currentCategory.name}</h1>
+            <h1>{currentCategory.title}</h1>
           </section>
           <section className="section-description">
             <p>{currentCategory.description}</p>
