@@ -3,37 +3,17 @@ import form from "../../assets/form.json";
 import FormItem from "../../components/shared/FormItem";
 import FormSubmit from "../../components/shared/FormSubmit";
 import Dropdown from "../shared/Dropdown";
+import { addMeal } from "../../scripts/foodMethods";
 
-import { createDoc } from "../../scripts/fireStore";
-const imageLink =
-  "https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80";
-export default function AddMeal({ categories, database }) {
+export default function AddMeal({ categories }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [imageURL, setImageURL] = useState(imageLink);
   const [ingredients, setIngredients] = useState([]);
   const [price, setPrice] = useState("");
   const [category, setCategory] = useState("");
+  const [image, setImage] = useState("");
+
   //Methods
-
-  function addMeal(event) {
-    event.preventDefault();
-    const newMeal = {
-      id: Date.now(),
-      title: title,
-      description: description,
-      ingredients: ingredients,
-      imageURL: imageURL,
-      price: price,
-      category: category,
-    };
-
-    createDoc(database, "meals", newMeal);
-    alert(
-      newMeal.title + " successfully added to category " + newMeal.category
-    );
-  }
-
   function handleClick(element) {
     setCategory(element);
   }
@@ -47,8 +27,16 @@ export default function AddMeal({ categories, database }) {
         category={category}
       />
       <form
-        onSubmit={(event, name, description, imageURL) =>
-          addMeal(event, name, description, imageURL)
+        onSubmit={(event) =>
+          addMeal(
+            event,
+            title,
+            description,
+            image,
+            category,
+            ingredients,
+            price
+          )
         }
       >
         <div className="empty" />
@@ -82,9 +70,13 @@ export default function AddMeal({ categories, database }) {
         <div className="add">
           <label>
             +
-            <input type="file" className="btn-circle" />
+            <input
+              type="file"
+              className="btn-circle"
+              onChange={(e) => setImage(e.target.files[0])}
+            />
           </label>
-          <h4>Select Meal image</h4>
+          <h4>Select Dish image</h4>
         </div>
 
         <FormSubmit isAllValid={true} />
