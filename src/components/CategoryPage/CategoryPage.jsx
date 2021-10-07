@@ -1,46 +1,25 @@
-import { useState, useEffect } from "react";
+// NPM Packages
 import { useParams, NavLink } from "react-router-dom";
 
-//import categories from "../../assets/categories.json";
-import { getCollection } from "../../scripts/fireStore";
+import useFetch from "../../hooks/useFetch";
+import { getCurrentCategory } from "../../scripts/foodMethods";
 import Products from "./Products";
 import ButtonBack from "../shared/ButtonBack";
-import firebaseInstance from "../../scripts/firebase";
-import { getFirestore } from "firebase/firestore/lite";
+//import categories from "../../assets/categories.json";
 
 export default function CategoryPage() {
+  // Custom Hooks
+  const categories = useFetch("categories");
+
+  //Const
   const { category } = useParams();
-
-  const [categories, setCategories] = useState([]);
-  const [status, setStatus] = useState(0); // 0: loading, 1: loaded, 2: error
-
-  const database = getFirestore(firebaseInstance);
-
-  useEffect(() => {
-    getCollection(database, "categories")
-      .then((result) => {
-        setCategories(result);
-        setStatus(1);
-      })
-      .catch((error) => {
-        console.log(error);
-        setStatus(2);
-      });
-  }, [database]);
-
-  function getCurrentCategory(array, categoryOfFood) {
-    return array.filter((item) => {
-      return item.name === categoryOfFood;
-    });
-  }
-  const currentCategory = getCurrentCategory(categories, category)[0];
-  console.log(currentCategory);
+  const currentCategory = getCurrentCategory(categories.data, category);
 
   return (
     <>
-      {status === 0 && <p>Loading ⏱</p>}
-      {status === 2 && <p>Error 🚨</p>}
-      {status === 1 && (
+      {categories.loading === true && <p>Loading ⏱</p>} {/* TODO - Spinner */}
+      {categories.error !== null && <p>Error 🚨</p>} {/* TODO - custom error */}
+      {!categories.loading && categories.error === null && (
         <main className="page-category">
           <section className="section-header">
             <h1>{currentCategory.name}</h1>

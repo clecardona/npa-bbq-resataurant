@@ -69,5 +69,15 @@
       "alert": "Please enter a valid ingredients (3-10 chars)",
       "className": "input-ingredient"
     }
+  },
+  {
+    "id": 8,
+    "settings": {
+      "label": "",
+      "type": "text",
+      "placeholder": "Enter price",
+      "alert": "Please enter a valid price > 0",
+      "className": "input-price"
+    }
   }
 ]

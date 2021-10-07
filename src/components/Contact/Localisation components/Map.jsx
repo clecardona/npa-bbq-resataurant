@@ -17,7 +17,7 @@ export default function Map({ coordinates }) {
         <MapMarker
           lat={coordinates.lat}
           lng={coordinates.lng}
-          text="Wild and the Moon"
+          text="YETI BBQ"
         />
       </GoogleMapReact>
     </div>

@@ -23,13 +23,13 @@ export default function AddMeal({ categories }) {
   return (
     <section className="section-admin">
       <h2>Add new Meal</h2>
+      <Dropdown categories={categories} />
       <form
         onSubmit={(event, name, description, imageURL) =>
           addMeal(event, name, description, imageURL)
         }
       >
-        <Dropdown categories={categories} />
-
+        <div className="empty" />
         <FormItem
           settings={form[4].settings}
           hook={[title, setTitle]}
@@ -42,6 +42,11 @@ export default function AddMeal({ categories }) {
         />
         <FormItem
           settings={form[6].settings}
+          hook={[ingredients, setIngredients]}
+          isValid={true}
+        />
+        <FormItem
+          settings={form[7].settings}
           hook={[ingredients, setIngredients]}
           isValid={true}
         />
