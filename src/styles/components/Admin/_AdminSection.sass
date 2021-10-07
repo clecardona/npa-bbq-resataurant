@@ -1,28 +1,43 @@
 .section-admin
+    h2
+        padding: 0 18px
+
+    .dropdown
+        position: absolute
+        margin-top: 12px
+        width: 100%
+        padding: 0 12px
 
     form
-        display: flex
-        flex-direction: column
-        justify-content: flex-start
+        display: grid
+        gap: 6px
+
+        grid-auto-flow: column
+        grid-template-rows: repeat(7,min-content)
+
+        justify-items: center
+        align-items: center
 
         width: 100%
         max-width: 800px
         margin: auto
 
-    h2
-        padding: 0 12px
+        .empty
+            height: 44px
 
-    .input-title,.input-ingredient
-        height: $mob-button-height
+        h2
+            padding: 0 12px
 
-    .input-description
+        .input-title,.input-ingredient,.input-price
+            height: $mob-button-height
 
-        height: 120px
+        .input-description
+            height: 120px
 
-    .add
-        align-self: flex-start
-        display: grid
-        grid-template-columns: min-content 1fr
-        align-items: center
-        input
-            margin-right: 24px
+        .add
+            align-self: flex-start
+            display: grid
+            grid-template-columns: min-content 1fr
+            align-items: center
+            input
+                margin-right: 24px
