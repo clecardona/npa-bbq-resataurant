@@ -29,6 +29,9 @@ export default function AddMeal({ categories, database }) {
     };
 
     createDoc(database, "meals", newMeal);
+    alert(
+      newMeal.title + " successfully added to category " + newMeal.category
+    );
   }
 
   function handleClick(element) {
@@ -38,7 +41,11 @@ export default function AddMeal({ categories, database }) {
   return (
     <section className="section-admin">
       <h2>Add new Meal</h2>
-      <Dropdown categories={categories} handleClick={handleClick} />
+      <Dropdown
+        categories={categories}
+        handleClick={handleClick}
+        category={category}
+      />
       <form
         onSubmit={(event, name, description, imageURL) =>
           addMeal(event, name, description, imageURL)
@@ -57,7 +64,13 @@ export default function AddMeal({ categories, database }) {
         />
         <FormItem
           settings={form[6].settings}
-          hook={[ingredients, setIngredients]}
+          hook={[
+            ingredients.join(" "),
+            (str) => {
+              const array = str.split(" ");
+              setIngredients(array);
+            },
+          ]}
           isValid={true}
         />
         <FormItem
@@ -67,8 +80,11 @@ export default function AddMeal({ categories, database }) {
         />
 
         <div className="add">
-          <input type="file" className="btn-circle" />
-          <h3>Select Meal image</h3>
+          <label>
+            +
+            <input type="file" className="btn-circle" />
+          </label>
+          <h4>Select Meal image</h4>
         </div>
 
         <FormSubmit isAllValid={true} />

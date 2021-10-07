@@ -28,8 +28,7 @@ export default function ProductPage() {
           <Ingredients product={product} />
           <section className="section-price">
             <div className="line" />
-            <h1>150 Kr</h1>
-            {/* TODO -implement price */}
+            <h1>{product.price} Kr</h1>
           </section>
           <NavLink to={`/menu/${category}`} className="btn btn-main btn-300">
             <ButtonBack label="Go back" />

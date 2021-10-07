@@ -1,13 +1,27 @@
 .section-sorter
+
     margin: 18px 0
-    background: $gray9
-    @include flex-full-centered
-    height: 44px
+    display: flex
+    justify-content: center
 
-    .vl
-        background: $black
-        height: 12px
-        width: 1px
+    width: 100%
+    .btn
 
-    .active
-        font-weight: 300
+        width: 170px
+        border-radius: 8px
+
+    .btn-inactive
+        h4
+            color: $red
+            font-weight: 300
+        &:hover
+            border: 1px solid $red
+            transition: .3s ease
+
+    .btn-active
+        border: 1px solid $red
+
+        margin: 0 6px
+        h4
+            color: $red
+            font-weight: 300

@@ -50,8 +50,11 @@ export default function AddCategory({ database }) {
           isValid={true}
         />
         <div className="add">
-          <input type="file" className="btn-circle" />
-          <h3>Select Category image</h3>
+          <label>
+            +
+            <input type="file" className="btn-circle" />
+          </label>
+          <h4>Select Category image</h4>
         </div>
 
         <FormSubmit isAllValid={true} />

@@ -65,7 +65,7 @@
     "settings": {
       "label": "",
       "type": "text",
-      "placeholder": "Enter ingredient",
+      "placeholder": "Ingredient1 Ingredient2 ...   ",
       "alert": "Please enter a valid ingredients (3-10 chars)",
       "className": "input-ingredient"
     }

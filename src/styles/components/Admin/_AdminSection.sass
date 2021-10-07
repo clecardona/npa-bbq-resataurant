@@ -1,12 +1,17 @@
 .section-admin
+    max-width: 800px
+    margin: auto
     h2
         padding: 0 18px
 
     .dropdown
-        position: absolute
-        margin-top: 12px
+        @include absolute-horizontal-centered
+        margin-top: 24px
         width: 100%
         padding: 0 12px
+        @media only screen and (min-width: 1000px)
+            padding: 30px 80px
+            //margin-top: 0px
 
     form
         display: grid
@@ -20,13 +25,19 @@
 
         width: 100%
         max-width: 800px
-        margin: auto
+        margin: 24px auto
 
         .empty
             height: 44px
 
         h2
             padding: 0 12px
+
+        input
+            color: $gray9
+
+        input[type=submit]
+            color: $white
 
         .input-title,.input-ingredient,.input-price
             height: $mob-button-height
@@ -35,9 +46,25 @@
             height: 120px
 
         .add
+            width: 100%
             align-self: flex-start
             display: grid
+            gap: 24px
             grid-template-columns: min-content 1fr
             align-items: center
+            padding: 0 8px
+            height: 60px
+            label
+                $size: $mob-button-height
+                cursor: pointer
+                @include flex-full-centered
+                height: $size
+                width: $size
+                background: $red
+                border-radius: $size
+                &:hover
+                    background: $redDark
+                    border-color: $redDark
+                    transition: ease .3s
             input
-                margin-right: 24px
+                display: none
