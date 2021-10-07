@@ -2,18 +2,16 @@ import { useState } from "react";
 import DropdownItem from "./DropdownItem";
 import down from "../../assets/icns/down.svg";
 
-export default function Dropdown({ categories }) {
+export default function Dropdown({ categories, handleClick }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [category, setCategory] = useState("");
-
-  function handleClick(element) {
-    setCategory(element);
-    setIsOpen(false);
-  }
-
   const Categories = categories.map((item) => {
     return (
-      <DropdownItem onClick={() => handleClick(item.name)}>
+      <DropdownItem
+        onClick={() => {
+          handleClick(item.name);
+          setIsOpen(false);
+        }}
+      >
         {item.name}
       </DropdownItem>
     );
@@ -28,7 +26,7 @@ export default function Dropdown({ categories }) {
           setIsOpen(!isOpen);
         }}
       >
-        <h4>Select Category {category} </h4>
+        <h4>Select Category </h4>
 
         <img src={down} alt="down" className="dropdown-arrow" />
       </button>

@@ -16,6 +16,7 @@ export default function AddCategory({ database }) {
   function addCategory(event) {
     event.preventDefault();
     const newCategory = {
+      id: Date.now(),
       name: name,
       description: description,
       imageURL: imageURL,

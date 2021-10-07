@@ -5,25 +5,40 @@ import FormSubmit from "../../components/shared/FormSubmit";
 import Dropdown from "../shared/Dropdown";
 
 import { createDoc } from "../../scripts/fireStore";
-
-export default function AddMeal({ categories }) {
+const imageLink =
+  "https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80";
+export default function AddMeal({ categories, database }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [imageURL, setImageURL] = useState(
-    "https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80"
-  );
+  const [imageURL, setImageURL] = useState(imageLink);
   const [ingredients, setIngredients] = useState([]);
+  const [price, setPrice] = useState("");
+  const [category, setCategory] = useState("");
+  //Methods
 
-  function addMeal(event, catName, catDescription, catImageURL) {
-    // add the meal to firestore db
-    event.preventdefault();
-    alert("title:" + title + "/n  description: " + description);
-    //return null;
+  function addMeal(event) {
+    event.preventDefault();
+    const newMeal = {
+      id: Date.now(),
+      title: title,
+      description: description,
+      ingredients: ingredients,
+      imageURL: imageURL,
+      price: price,
+      category: category,
+    };
+
+    createDoc(database, "meals", newMeal);
   }
+
+  function handleClick(element) {
+    setCategory(element);
+  }
+
   return (
     <section className="section-admin">
       <h2>Add new Meal</h2>
-      <Dropdown categories={categories} />
+      <Dropdown categories={categories} handleClick={handleClick} />
       <form
         onSubmit={(event, name, description, imageURL) =>
           addMeal(event, name, description, imageURL)
@@ -47,7 +62,7 @@ export default function AddMeal({ categories }) {
         />
         <FormItem
           settings={form[7].settings}
-          hook={[ingredients, setIngredients]}
+          hook={[price, setPrice]}
           isValid={true}
         />
 
