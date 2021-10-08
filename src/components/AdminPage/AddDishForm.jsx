@@ -1,11 +1,11 @@
 import { useState } from "react";
 import form from "../../assets/form.json";
-import FormItem from "../../components/shared/FormItem";
-import FormSubmit from "../../components/shared/FormSubmit";
+import FormItem from "../shared/FormItem";
+import FormSubmit from "../shared/FormSubmit";
 import Dropdown from "../shared/Dropdown";
 import { addMeal } from "../../scripts/foodMethods";
 
-export default function AddMeal({ categories }) {
+export default function AddDishForm({ categories }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [ingredients, setIngredients] = useState([]);
@@ -20,7 +20,7 @@ export default function AddMeal({ categories }) {
 
   return (
     <section className="section-admin">
-      <h2>Add new Meal</h2>
+      <h2>Add new Dish</h2>
       <Dropdown
         categories={categories}
         handleClick={handleClick}

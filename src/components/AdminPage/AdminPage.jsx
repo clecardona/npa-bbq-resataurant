@@ -3,12 +3,12 @@ import { useState } from "react";
 import useFetch from "../../hooks/useFetch";
 import AddCategory from "./AddCategory";
 import Sorter from "./Sorter";
-import AddMeal from "./AddMeal";
+import AddDishForm from "./AddDishForm";
 
 export default function AdminPage() {
   //hooks
-  const [isCategory, setIsCategory] = useState(false);
-  const categories = useFetch("categories");
+  const [isCategory, setIsCategory] = useState("new-cat");
+  const categories = useFetch("categories"); //TODO - refactor MEALS to DISHES
 
   // Methods
 
@@ -20,10 +20,11 @@ export default function AdminPage() {
         <main>
           <div className="page-admin">
             <Sorter hook={[isCategory, setIsCategory]} />
-            {isCategory ? (
+            {isCategory === "new-cat" && (
               <AddCategory categories={categories.data} />
-            ) : (
-              <AddMeal categories={categories.data} />
+            )}
+            {isCategory === "new-dish" && (
+              <AddDishForm categories={categories.data} />
             )}
           </div>
         </main>
