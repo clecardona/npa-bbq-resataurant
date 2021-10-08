@@ -16,7 +16,6 @@ export default function ProductPage() {
 
   // Const
   const product = getRelatedItem(dishes.data, productIDNumber);
-  console.log(product);
 
   return (
     <>
@@ -27,8 +26,8 @@ export default function ProductPage() {
           <Description product={product} />
           <Ingredients product={product} />
           <section className="section-price">
-            <div className="line" />
-            <h1>{product.price} Kr</h1>
+            {/* <div className="line" /> */}
+            <p>{product.price} Kr</p>
           </section>
           <NavLink to={`/menu/${category}`} className="btn btn-main btn-300">
             <ButtonBack label="Go back" />
