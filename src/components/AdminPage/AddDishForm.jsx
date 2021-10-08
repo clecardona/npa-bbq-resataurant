@@ -4,6 +4,7 @@ import FormItem from "../shared/FormItem";
 import FormSubmit from "../shared/FormSubmit";
 import Dropdown from "../shared/Dropdown";
 import { addDish } from "../../scripts/foodMethods";
+import UploadImage from "../shared/UploadImage";
 
 export default function AddDishForm({ categories }) {
   const [title, setTitle] = useState("");
@@ -12,6 +13,7 @@ export default function AddDishForm({ categories }) {
   const [price, setPrice] = useState("");
   const [category, setCategory] = useState("");
   const [image, setImage] = useState("");
+  const [imageURL, setImageURL] = useState("");
 
   //Methods
   function handleClick(element) {
@@ -21,11 +23,13 @@ export default function AddDishForm({ categories }) {
   return (
     <section className="section-admin">
       <h2>Add new Dish</h2>
-      <Dropdown
-        categories={categories}
-        handleClick={handleClick}
-        category={category}
-      />
+      <div className="drop-container">
+        <Dropdown
+          categories={categories}
+          handleClick={handleClick}
+          category={category}
+        />
+      </div>
       <form
         onSubmit={(event) =>
           addDish(
@@ -39,7 +43,6 @@ export default function AddDishForm({ categories }) {
           )
         }
       >
-        <div className="empty" />
         <FormItem
           settings={form[4].settings}
           hook={[title, setTitle]}
@@ -67,17 +70,12 @@ export default function AddDishForm({ categories }) {
           isValid={true}
         />
 
-        <div className="add">
-          <label>
-            +
-            <input
-              type="file"
-              className="btn-circle"
-              onChange={(e) => setImage(e.target.files[0])}
-            />
-          </label>
-          <h4>Select Dish image</h4>
-        </div>
+        <UploadImage
+          hookImage={[image, setImage]}
+          hookImageURL={[imageURL, setImageURL]}
+        >
+          Upload New dish image
+        </UploadImage>
 
         <FormSubmit isAllValid={true} />
       </form>

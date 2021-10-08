@@ -1,5 +1,5 @@
 import uploadImage from "./storage";
-import { createDoc } from "./fireStore";
+import { createDoc, modifyDoc, delDoc } from "./fireStore";
 import firebaseInstance from "../scripts/firebase";
 import { getFirestore } from "firebase/firestore/lite";
 
@@ -33,13 +33,32 @@ export async function addCategory(
   const newImageURL = await uploadImage(firebaseInstance, someImage);
 
   const newCategory = {
-    id: Date.now(),
     title: someTitle,
     description: someDescription,
     imageURL: newImageURL,
   };
   createDoc(database, "categories", newCategory);
   alert(newCategory.title + " successfully added to category ");
+}
+
+export async function updateCategory(
+  event,
+  newTitle,
+  newDescription,
+  newImage,
+  id
+) {
+  event.preventDefault();
+  const newImageURL = await uploadImage(firebaseInstance, newImage);
+
+  const updatedCategory = {
+    title: newTitle,
+    description: newDescription,
+    imageURL: newImageURL,
+  };
+
+  await modifyDoc(database, "categories", id, updatedCategory);
+  alert(updatedCategory.title + " successfully updated ");
 }
 
 export async function addDish(
@@ -66,4 +85,12 @@ export async function addDish(
 
   createDoc(database, "dishes", newDish);
   alert(newDish.title + " successfully added to category " + newDish.category);
+}
+
+// Delete category by id
+export async function deleteCategory(id) {
+  const database = getFirestore(firebaseInstance);
+  const path = "categories";
+  delDoc(database, path, id);
+  console.log("Document deleted ");
 }

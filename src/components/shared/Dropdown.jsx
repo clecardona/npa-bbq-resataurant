@@ -2,6 +2,8 @@ import { useState } from "react";
 import DropdownItem from "./DropdownItem";
 import down from "../../assets/icns/down.svg";
 
+//TODO : the selection should track the item.id also
+
 export default function Dropdown({ categories, handleClick, category }) {
   const [isOpen, setIsOpen] = useState(false);
   const Categories = categories.map((item) => {
@@ -9,7 +11,7 @@ export default function Dropdown({ categories, handleClick, category }) {
       <DropdownItem
         key={item.id}
         onClick={() => {
-          handleClick(item.title);
+          handleClick(item);
           setIsOpen(false);
         }}
       >
@@ -17,7 +19,9 @@ export default function Dropdown({ categories, handleClick, category }) {
       </DropdownItem>
     );
   });
-  console.log(category);
+
+  //console.log(category);
+
   return (
     <div className="dropdown">
       <button
@@ -27,8 +31,7 @@ export default function Dropdown({ categories, handleClick, category }) {
           setIsOpen(!isOpen);
         }}
       >
-        <h4>{category.length === 0 ? "Select Category" : category} </h4>
-
+        <h4>{category === "" ? "Select Category" : category.title} </h4>
         <img src={down} alt="down" className="dropdown-arrow" />
       </button>
 

@@ -14,7 +14,7 @@ export default function Products({ category }) {
         <img src={item.imageURL} alt="img" />
         <h3 className="title">{item.title}</h3>
         <p className="description">{item.description}</p>
-        <h2 className="price">120 Kr</h2>
+        <h2 className="price">{item.price} Kr</h2>
       </a>
     );
   });

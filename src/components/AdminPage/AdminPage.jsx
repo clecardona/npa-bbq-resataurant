@@ -4,14 +4,15 @@ import useFetch from "../../hooks/useFetch";
 import AddCategory from "./AddCategory";
 import Sorter from "./Sorter";
 import AddDishForm from "./AddDishForm";
+import EditCategoryForm from "./EditCategoryForm";
 
 export default function AdminPage() {
   //hooks
-  const [isCategory, setIsCategory] = useState("new-cat");
-  const categories = useFetch("categories"); //TODO - refactor MEALS to DISHES
+  const [isCategory, setIsCategory] = useState("edit-cat");
+  const categories = useFetch("categories");
+  //console.log(categories);
 
   // Methods
-
   return (
     <>
       {categories.loading === true && <p>Loading ⏱</p>} {/* TODO - Spinner */}
@@ -25,6 +26,9 @@ export default function AdminPage() {
             )}
             {isCategory === "new-dish" && (
               <AddDishForm categories={categories.data} />
+            )}
+            {isCategory === "edit-cat" && (
+              <EditCategoryForm categories={categories.data} />
             )}
           </div>
         </main>

@@ -11,7 +11,7 @@ export default function Sorter({ hook }) {
           setIsCategory("new-cat");
         }}
       >
-        <h4>New Category</h4>
+        <h4>Create Category</h4>
       </button>
 
       <button
@@ -22,7 +22,7 @@ export default function Sorter({ hook }) {
           setIsCategory("new-dish");
         }}
       >
-        <h4>New Dish</h4>
+        <h4>Create Dish</h4>
       </button>
 
       <button
@@ -33,7 +33,7 @@ export default function Sorter({ hook }) {
           setIsCategory("edit-cat");
         }}
       >
-        <h4>Edit Categories</h4>
+        <h4>Edit Category</h4>
       </button>
 
       <button

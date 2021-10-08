@@ -1,0 +1,39 @@
+.upload
+    display: grid
+    grid-template-columns: 1fr 1fr
+    align-items: center
+    width: 100%
+
+    .add
+        width: 100%
+        align-self: flex-start
+        display: grid
+        gap: 24px
+        grid-template-columns: min-content 1fr
+        align-items: center
+        padding: 0 8px
+        height: 60px
+        label
+            $size: $mob-button-height
+            cursor: pointer
+            @include flex-full-centered
+            height: $size
+            width: $size
+            background: $red
+            border-radius: $size
+            input
+                display: none
+            &:hover
+                background: $redDark
+                border-color: $redDark
+                transition: ease .3s
+
+    .url
+        display: flex
+        align-items: center
+        p
+            width: max-content
+            margin-right: 12px
+        input
+            width: 300px
+            height: $mob-button-height

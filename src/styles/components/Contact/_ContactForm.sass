@@ -14,11 +14,12 @@ form
 
   align-items: center
 
-  border: 1px solid $gray3
-  border-radius: 20px
+  border: 1px solid transparent
+  border-radius: 12px
   margin: 12px
-  padding: 30px 80px
 
+  @media only screen and (min-width: $desktopBreakpoint)
+    border: 1px solid $gray3
   label
     width: 100%
 
@@ -35,9 +36,6 @@ form
 
       width: 100%
       height: $mob-button-height
-
-  :nth-child(5)
-    justify-self: center
 
   .btn-main
     margin: 24px 0

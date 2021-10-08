@@ -14,9 +14,9 @@ button
 .btn-main
   background: $red
   border: 1px solid $red
-  border-radius: 44px
+  border-radius: 8px
 
-  h3
+  h3,h4
     color: $white
     text-transform: capitalize
 
@@ -28,15 +28,18 @@ button
 
   &:hover
     transition: ease 0.3s
-    background-color: $redDark
-    border-color: $redDark
+    filter: brightness(0.8)
+
+  &:disabled
+    filter: saturate(0)
+    opacity: 0.05
 
 .btn-ghost
   background: none
   border: 2px solid $red
-  border-radius: 44px
+  border-radius: 8px
 
-  h3
+  h3,h4
     color: $red
     text-transform: capitalize
 
@@ -60,16 +63,10 @@ button
   cursor: default
   border-color: $gray4
 
-  &:hover
-    color: $red
-    border-color: $gray4
-
   h3
     font-size: 14px
     margin-left: 3px
-    color: $gray5
-    &:hover
-      color: $gray4
+    color: $gray4
 
 input
   border: none
@@ -79,11 +76,6 @@ input
 
 input[type="submit"]
   color: $white
-
-.btn-send
-  &:disabled
-    background: rgb(228, 228, 228)
-    border-color: rgb(228, 228, 228)
 
 .btn-circle
   height: 44px
