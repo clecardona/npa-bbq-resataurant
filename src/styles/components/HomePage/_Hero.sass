@@ -1,25 +1,22 @@
 .section-hero
   @include flex-full-centered
-  min-height: calc(100vh - 160px )
+  height: calc(100vh - 160px )
 
   .wrapper
     z-index: 1
     width: 100%
+    height: calc(100vh - 160px )
     display: grid
     justify-items: center
     align-items: center
     grid-template-columns: 1fr 1fr
-    grid-template-rows: 1fr min-content min-content 1fr
+    grid-template-rows: 1fr min-content min-content 160px
     grid-template-areas: " img img" "title title" "subtitle subtitle" "btn btn"
-  @media screen and (min-width: $tabletBreakpoint)
-    grid-template-rows: 1fr min-content min-content 1fr
-    grid-template-areas: " .img" "title img" "subtitle img" ".img"
-
-    justify-items: center
-    align-items: center
-
-    overflow: hidden
-    background: $black
+    @media screen and (min-width: $tabletBreakpoint)
+      grid-template-rows: 1fr min-content min-content 300px
+      justify-items: center
+      align-items: center
+      overflow: hidden
 
   h1,
   h2
@@ -34,6 +31,8 @@
 
   .right-illustration
     grid-area: img
+    align-self: end
+
     width: 200px
     object-fit: cover
     opacity: 0.8
@@ -43,14 +42,13 @@
 
   .btn
     grid-area: btn
-    align-self: end
-    margin-bottom: 40px
 
   .hero
     z-index: 0
     height: calc(100vh - 160px )
     width: 100vw
     object-fit: cover
-    filter: blur(2px) brightness(.15)
+    object-position: bottom
+    filter: blur(0px) brightness(.15)
 
     @include absolute-centered

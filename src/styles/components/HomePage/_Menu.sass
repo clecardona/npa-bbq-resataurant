@@ -1,32 +1,31 @@
 .page-menu
-  max-width: 800px
-  margin: auto
+  height: 100%
+  @include page-layout
   h1
-    width: 100%
-
-    text-align: center
-    height: 80px
-    @include flex-full-centered
+    @include page-layout-h1
 
   .section-menu
-    min-height: calc(100vh - 160px)
+    $card-height: 210px
+    height: 100%
 
     display: grid
-    gap: 12px
+    gap: 18px
     grid-template-columns: 1fr
     grid-auto-rows: min-content
-    margin: 0 18px 18px 18px
+
+    background: $gray3
+    padding: 18px
 
     @media only screen and (min-width: $tabletBreakpoint)
       grid-template-columns: 1fr 1fr
 
     .card
-      background: $gray2
-      color: $white
+      background: $white
+      color: $black
       border-radius: 8px
       overflow: hidden
 
-      height: 200px
+      height: $card-height
       @include shadow-card
 
       display: grid
@@ -37,7 +36,7 @@
 
       img
         grid-area: img
-        height: 200px
+        height: $card-height
         width: 100%
         object-fit: cover
         object-position: top center
@@ -61,12 +60,11 @@
         margin: 6px 0
 
       p
+
         grid-area: description
         overflow: hidden
-        white-space: nowrap
-        text-overflow: ellipsis
-
         height: 100%
         width: 100%
+        overflow: hidden
 
-      @include text-bloc
+        @include text-bloc

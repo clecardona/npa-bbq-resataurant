@@ -21,9 +21,8 @@ export default function CategoryPage() {
       {categories.error !== null && <p>Error 🚨</p>} {/* TODO - custom error */}
       {!categories.loading && categories.error === null && (
         <main className="page-category">
-          <section className="section-header">
-            <h1>{currentCategory.title}</h1>
-          </section>
+          <h1>{currentCategory.title}</h1>
+
           <section className="section-description">
             <p>{currentCategory.description}</p>
           </section>

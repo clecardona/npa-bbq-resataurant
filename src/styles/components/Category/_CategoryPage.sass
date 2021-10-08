@@ -1,40 +1,30 @@
 .page-category
-  display: flex
-  flex-direction: column
-  justify-content: flex-start
-  align-items: center
-  max-width: 800px
-  margin: auto
+  @include page-layout
+
+  h1
+    @include page-layout-h1
 
   .btn-300
     width: 300px
     margin: 24px
     @media only screen and (min-width: $desktopBreakpoint)
-      margin: 64px
-
-.section-header
-  width: 100%
-
-  height: 70px
-  display: flex
-  justify-content: center
-  align-items: center
-
-  color: $white
-  text-transform: capitalize
-
-  h1
-    font-weight: 200
+      margin: 32px
 
 .section-description
   width: 100%
+  max-height: 100px
+  overflow: hidden
 
   @media only screen and (min-width: $desktopBreakpoint)
     width: 800px
     margin: auto
 
   p
-
-    padding: 12px
-
-  @include text-bloc
+    margin-bottom: 18px
+    padding: 0 18px
+    @include text-bloc
+    @media only screen and (min-width: $desktopBreakpoint)
+      columns: 2
+      padding: 0
+    @media only screen and (min-width: 1200px)
+      columns: 3

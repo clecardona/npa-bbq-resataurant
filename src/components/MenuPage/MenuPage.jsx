@@ -17,7 +17,7 @@ export default function MenuPage() {
   });
 
   return (
-    <>
+    <main>
       {categories.loading === true && <p>Loading ⏱</p>} {/* TODO - Spinner */}
       {categories.error !== null && <p>Error 🚨</p>} {/* TODO - custom error */}
       {!categories.loading && categories.error === null && (
@@ -26,6 +26,6 @@ export default function MenuPage() {
           <section className="section-menu ">{MenuItems}</section>
         </div>
       )}
-    </>
+    </main>
   );
 }
