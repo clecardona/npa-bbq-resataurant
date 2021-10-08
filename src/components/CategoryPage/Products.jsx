@@ -3,10 +3,10 @@ import { getRelatedFood } from "../../scripts/foodMethods";
 //import meals from "../../assets/meals.json";
 
 export default function Products({ category }) {
-  const meals = useFetch("meals");
-  console.log(meals);
+  const dishes = useFetch("dishes");
+  console.log(dishes);
 
-  const listOfDishes = getRelatedFood(meals.data, category);
+  const listOfDishes = getRelatedFood(dishes.data, category);
 
   const ProductsItems = listOfDishes.map((item) => {
     return (
@@ -21,9 +21,9 @@ export default function Products({ category }) {
 
   return (
     <>
-      {meals.loading === true && <p>Loading ⏱</p>} {/* TODO - Spinner */}
-      {meals.error !== null && <p>Error 🚨</p>} {/* TODO - custom error */}
-      {!meals.loading && meals.error === null && (
+      {dishes.loading === true && <p>Loading ⏱</p>} {/* TODO - Spinner */}
+      {dishes.error !== null && <p>Error 🚨</p>} {/* TODO - custom error */}
+      {!dishes.loading && dishes.error === null && (
         <>
           {listOfDishes.length === 0 ? (
             <h3>Category empty for now</h3>

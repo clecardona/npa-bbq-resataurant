@@ -3,7 +3,7 @@ import form from "../../assets/form.json";
 import FormItem from "../shared/FormItem";
 import FormSubmit from "../shared/FormSubmit";
 import Dropdown from "../shared/Dropdown";
-import { addMeal } from "../../scripts/foodMethods";
+import { addDish } from "../../scripts/foodMethods";
 
 export default function AddDishForm({ categories }) {
   const [title, setTitle] = useState("");
@@ -28,7 +28,7 @@ export default function AddDishForm({ categories }) {
       />
       <form
         onSubmit={(event) =>
-          addMeal(
+          addDish(
             event,
             title,
             description,

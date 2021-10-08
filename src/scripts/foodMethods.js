@@ -42,7 +42,7 @@ export async function addCategory(
   alert(newCategory.title + " successfully added to category ");
 }
 
-export async function addMeal(
+export async function addDish(
   event,
   someTitle,
   someDescription,
@@ -54,7 +54,7 @@ export async function addMeal(
   event.preventDefault();
   const newImageURL = await uploadImage(firebaseInstance, someImage);
 
-  const newMeal = {
+  const newDish = {
     id: Date.now(),
     title: someTitle,
     description: someDescription,
@@ -64,6 +64,6 @@ export async function addMeal(
     category: someCategory,
   };
 
-  createDoc(database, "meals", newMeal);
-  alert(newMeal.title + " successfully added to category " + newMeal.category);
+  createDoc(database, "dishes", newDish);
+  alert(newDish.title + " successfully added to category " + newDish.category);
 }

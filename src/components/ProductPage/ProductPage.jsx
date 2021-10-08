@@ -8,21 +8,21 @@ import ButtonBack from "../../components/shared/ButtonBack";
 
 export default function ProductPage() {
   // Hooks
-  const meals = useFetch("meals");
+  const dishes = useFetch("dishes");
 
   const { category } = useParams();
   const { productID } = useParams();
   const productIDNumber = Number.parseInt(productID);
 
   // Const
-  const product = getRelatedItem(meals.data, productIDNumber);
+  const product = getRelatedItem(dishes.data, productIDNumber);
   console.log(product);
 
   return (
     <>
-      {meals.loading === true && <p>Loading ⏱</p>} {/* TODO - Spinner */}
-      {meals.error !== null && <p>Error 🚨</p>} {/* TODO - custom error */}
-      {!meals.loading && meals.error === null && (
+      {dishes.loading === true && <p>Loading ⏱</p>} {/* TODO - Spinner */}
+      {dishes.error !== null && <p>Error 🚨</p>} {/* TODO - custom error */}
+      {!dishes.loading && dishes.error === null && (
         <main className="page-product">
           <Description product={product} />
           <Ingredients product={product} />
