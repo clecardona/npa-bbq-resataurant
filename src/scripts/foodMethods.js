@@ -46,18 +46,23 @@ export async function updateCategory(
   newTitle,
   newDescription,
   newImage,
-  id
+  category
 ) {
   event.preventDefault();
-  const newImageURL = await uploadImage(firebaseInstance, newImage);
+  let updatedCategory = { ...category };
 
-  const updatedCategory = {
-    title: newTitle,
-    description: newDescription,
-    imageURL: newImageURL,
-  };
+  if (newTitle !== "") {
+    updatedCategory.title = newTitle;
+  }
+  if (newDescription !== "") {
+    updatedCategory.description = newDescription;
+  }
+  if (newImage !== "") {
+    const newImageURL = await uploadImage(firebaseInstance, newImage);
+    updatedCategory.imageURL = newImageURL;
+  }
 
-  await modifyDoc(database, "categories", id, updatedCategory);
+  await modifyDoc(database, "categories", category.id, updatedCategory);
   alert(updatedCategory.title + " successfully updated ");
 }
 

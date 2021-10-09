@@ -13,10 +13,8 @@ export default function EditCategoryForm({ categories }) {
   const [image, setImage] = useState("");
   const [imageURL, setImageURL] = useState("");
 
-  const isDeleteDisabled = category === "";
-  const isSubmitDisabled = (title && description && category && image) === "";
-
-  console.log(isSubmitDisabled);
+  const isButtonDisabled = category === "";
+  //const isSubmitDisabled = (title && description && category && image) === "";
 
   //Methods
   function handleDeleteCategory() {
@@ -31,7 +29,7 @@ export default function EditCategoryForm({ categories }) {
   }
 
   function handleUpdateCategory(event) {
-    updateCategory(event, title, description, image, category.id);
+    updateCategory(event, title, description, image, category);
   }
 
   return (
@@ -47,6 +45,10 @@ export default function EditCategoryForm({ categories }) {
 
       <form className="form-admin" onSubmit={handleUpdateCategory}>
         <h3>Update Category</h3>
+        <p>
+          1. Select a category <br /> 2. Fill the field (s) you want to
+          modify/update
+        </p>
         <FormItem
           settings={form[4].settings}
           hook={[title, setTitle]}
@@ -63,13 +65,16 @@ export default function EditCategoryForm({ categories }) {
         >
           Upload New image
         </UploadImage>
-        <FormSubmit isAllValid={!isSubmitDisabled} />
+        <FormSubmit isAllValid={!isButtonDisabled} />
       </form>
       <form>
         <h3>Delete Category</h3>
+        <p>
+          1. Select a category <br /> 2. Click on "delete" button
+        </p>
         <button
           className="btn btn-main"
-          disabled={isDeleteDisabled}
+          disabled={isButtonDisabled}
           onClick={handleDeleteCategory}
         >
           <h4> Delete Category {category.title}</h4>
