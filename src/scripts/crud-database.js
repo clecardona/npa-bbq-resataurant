@@ -29,14 +29,12 @@ export async function createDishBytes(someDish, someImage) {
   const newImageURL = await uploadImage(firebaseInstance, someImage);
   const newDish = { ...someDish, imageURL: newImageURL };
   createDoc(database, "dishes", newDish);
-  alert(newDish.title + " successfully added to category " + newDish.category);
 }
 
 //Create a dish using URL link
 export async function createDishURL(someDish, someImageURL) {
   const newDish = { ...someDish, imageURL: someImageURL };
   createDoc(database, "dishes", newDish);
-  alert(newDish.title + " successfully added to category " + newDish.category);
 }
 
 /*-------------- READ -------------*/

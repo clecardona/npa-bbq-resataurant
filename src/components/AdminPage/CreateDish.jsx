@@ -40,7 +40,7 @@ export default function CreateDish({ categories }) {
     description: description,
     ingredients: ingredients,
     price: parseInt(price),
-    category: category.title,
+    category: category.id,
   };
 
   //Methods
@@ -51,6 +51,7 @@ export default function CreateDish({ categories }) {
     } else {
       createDishURL(dish, imageURL);
     }
+    alert(dish.title + " successfully added to category " + category.title);
   }
 
   return (
