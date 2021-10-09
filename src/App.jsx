@@ -21,8 +21,8 @@ export default function App() {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/menu" component={MenuPage} />
-          <Route path="/menu/:category/:productID" component={ProductPage} />
-          <Route path="/menu/:category" component={CategoryPage} />
+          <Route path="/menu/:categoryID/:productID" component={ProductPage} />
+          <Route path="/menu/:categoryID" component={CategoryPage} />
           <Route path="/contact" component={ContactPage} />
           <Route path="/admin" component={AdminPage} />
           <Route path="/" component={Page404} />

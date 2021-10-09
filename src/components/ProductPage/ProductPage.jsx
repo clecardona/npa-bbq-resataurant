@@ -12,13 +12,11 @@ import Spinner from "../shared/Spinner";
 export default function ProductPage() {
   // Hooks
   const dishes = useFetch("dishes");
-
-  const { category } = useParams();
+  const { categoryID } = useParams();
   const { productID } = useParams();
-  const productIDNumber = Number.parseInt(productID);
 
   // Const
-  const product = getRelatedItem(dishes.data, productIDNumber);
+  const product = getRelatedItem(dishes.data, productID);
 
   return (
     <>
@@ -31,7 +29,7 @@ export default function ProductPage() {
           <section className="section-price">
             <p>{product.price} Kr</p>
           </section>
-          <NavLink to={`/menu/${category}`} className="btn btn-main btn-300">
+          <NavLink to={`/menu/${categoryID}`} className="btn btn-main btn-300">
             <ButtonBack label="Go back" />
           </NavLink>
         </main>

@@ -3,6 +3,7 @@
 
   h1
     @include page-layout-h1
+    background: $red
 
   .btn-300
     width: 300px
@@ -20,11 +21,14 @@
     margin: auto
 
   p
-    margin-bottom: 18px
-    padding: 0 18px
+    background: $gray3
+    padding: 12px 18px
     @include text-bloc
     @media only screen and (min-width: $desktopBreakpoint)
       columns: 2
-      padding: 0
+      padding: 18px 0
     @media only screen and (min-width: 1200px)
       columns: 3
+
+.empty-list
+  opacity: 0.5

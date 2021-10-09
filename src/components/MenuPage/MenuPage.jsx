@@ -8,7 +8,7 @@ export default function MenuPage() {
 
   const MenuItems = categories.data.map((item) => {
     return (
-      <a href={`/menu/${item.title}`} className="card" key={item.id}>
+      <a href={`/menu/${item.id}`} className="card" key={item.id}>
         <img src={item.imageURL} alt="img" />
         <h2>{item.title}</h2>
         <p>{item.description}</p>

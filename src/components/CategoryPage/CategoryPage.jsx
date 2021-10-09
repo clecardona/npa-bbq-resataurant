@@ -9,12 +9,12 @@ import Spinner from "../shared/Spinner";
 import BoxError from "../shared/BoxError";
 
 export default function CategoryPage() {
-  // Custom Hooks
+  // Hooks
   const categories = useFetch("categories");
+  const { categoryID } = useParams();
 
   //Const
-  const { category } = useParams();
-  const currentCategory = getCurrentCategory(categories.data, category);
+  const currentCategory = getCurrentCategory(categories.data, categoryID);
 
   return (
     <>
@@ -28,7 +28,7 @@ export default function CategoryPage() {
             <p>{currentCategory.description}</p>
           </section>
 
-          <Products category={category} />
+          <Products category={currentCategory} />
 
           <NavLink to={`/menu`} className="btn btn-main btn-300">
             <ButtonBack label="Go back" />

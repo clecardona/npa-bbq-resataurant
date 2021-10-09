@@ -1,12 +1,12 @@
-export function getCurrentCategory(array, categoryOfFood) {
+export function getCurrentCategory(array, id) {
   return array.filter((item) => {
-    return item.title === categoryOfFood;
+    return item.id === id;
   })[0];
 }
 
-export function getRelatedFood(array, categoryOfFood) {
+export function getRelatedFood(array, categoryID) {
   return array.filter((item) => {
-    return item.category === categoryOfFood;
+    return item.category === categoryID;
   });
 }
 
