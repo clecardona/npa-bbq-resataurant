@@ -1,22 +1,23 @@
 import { useState } from "react";
 
 import useFetch from "../../hooks/useFetch";
-import AddCategory from "./AddCategory";
+import AddCategory from "./CreateCategory";
 import Sorter from "./Sorter";
-import AddDishForm from "./AddDishForm";
-import EditCategoryForm from "./EditCategoryForm";
+import CreateDish from "./CreateDish";
+import CreateCategory from "./EditCategory";
+import Spinner from "../shared/Spinner";
+import BoxError from "../shared/BoxError";
 
 export default function AdminPage() {
   //hooks
   const [isCategory, setIsCategory] = useState("edit-cat");
   const categories = useFetch("categories");
-  //console.log(categories);
 
   // Methods
   return (
     <>
-      {categories.loading === true && <p>Loading ⏱</p>} {/* TODO - Spinner */}
-      {categories.error !== null && <p>Error 🚨</p>} {/* TODO - custom error */}
+      {categories.loading === true && <Spinner />}
+      {categories.error !== null && <BoxError />}
       {!categories.loading && categories.error === null && (
         <main>
           <div className="page-admin">
@@ -25,10 +26,10 @@ export default function AdminPage() {
               <AddCategory categories={categories.data} />
             )}
             {isCategory === "new-dish" && (
-              <AddDishForm categories={categories.data} />
+              <CreateDish categories={categories.data} />
             )}
             {isCategory === "edit-cat" && (
-              <EditCategoryForm categories={categories.data} />
+              <CreateCategory categories={categories.data} />
             )}
           </div>
         </main>

@@ -46,7 +46,7 @@
       "label": "",
       "type": "text",
       "placeholder": "Enter title",
-      "alert": "Please enter a valid name(> 3 chars)",
+      "alert": "Please enter a valid name (> 3 chars) that does not exists already",
       "className": "input-title"
     }
   },

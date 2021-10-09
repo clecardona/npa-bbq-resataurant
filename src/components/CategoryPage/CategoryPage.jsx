@@ -5,7 +5,8 @@ import useFetch from "../../hooks/useFetch";
 import { getCurrentCategory } from "../../scripts/foodMethods";
 import Products from "./Products";
 import ButtonBack from "../shared/ButtonBack";
-//import categories from "../../assets/categories.json";
+import Spinner from "../shared/Spinner";
+import BoxError from "../shared/BoxError";
 
 export default function CategoryPage() {
   // Custom Hooks
@@ -17,8 +18,8 @@ export default function CategoryPage() {
 
   return (
     <>
-      {categories.loading === true && <p>Loading ⏱</p>} {/* TODO - Spinner */}
-      {categories.error !== null && <p>Error 🚨</p>} {/* TODO - custom error */}
+      {categories.loading === true && <Spinner />}
+      {categories.error !== null && <BoxError />}
       {!categories.loading && categories.error === null && (
         <main className="page-category">
           <h1>{currentCategory.title}</h1>

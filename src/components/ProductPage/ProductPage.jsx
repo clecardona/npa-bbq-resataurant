@@ -4,7 +4,10 @@ import useFetch from "../../hooks/useFetch";
 import { getRelatedItem } from "../../scripts/foodMethods";
 import Description from "./Description";
 import Ingredients from "./Ingredients";
-import ButtonBack from "../../components/shared/ButtonBack";
+
+import BoxError from "../shared/BoxError";
+import ButtonBack from "../shared/ButtonBack";
+import Spinner from "../shared/Spinner";
 
 export default function ProductPage() {
   // Hooks
@@ -19,14 +22,13 @@ export default function ProductPage() {
 
   return (
     <>
-      {dishes.loading === true && <p>Loading ⏱</p>} {/* TODO - Spinner */}
-      {dishes.error !== null && <p>Error 🚨</p>} {/* TODO - custom error */}
+      {dishes.loading === true && <Spinner />}
+      {dishes.error !== null && <BoxError />}
       {!dishes.loading && dishes.error === null && (
         <main className="page-product">
           <Description product={product} />
           <Ingredients product={product} />
           <section className="section-price">
-            {/* <div className="line" /> */}
             <p>{product.price} Kr</p>
           </section>
           <NavLink to={`/menu/${category}`} className="btn btn-main btn-300">

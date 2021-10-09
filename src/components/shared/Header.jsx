@@ -9,9 +9,15 @@ export default function Header() {
       </NavLink>
       <div className="home-shape" />
       <nav>
-        <NavLink to="/menu">Menu</NavLink>
-        <NavLink to="/contact">Contact</NavLink>
-        <NavLink to="/admin">Admin</NavLink>
+        <NavLink to="/menu">
+          <h4>Menu</h4>
+        </NavLink>
+        <NavLink to="/contact">
+          <h4>Contact</h4>
+        </NavLink>
+        <NavLink to="/admin">
+          <h4>Admin</h4>
+        </NavLink>
       </nav>
     </header>
   );

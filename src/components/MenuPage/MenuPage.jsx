@@ -1,10 +1,10 @@
 import useFetch from "../../hooks/useFetch";
-//import categories from "../../assets/categories.json";
+import Spinner from "../shared/Spinner";
+import BoxError from "../shared/BoxError";
 
 export default function MenuPage() {
-  // Custom Hooks
+  // Hooks
   const categories = useFetch("categories");
-  console.log(categories);
 
   const MenuItems = categories.data.map((item) => {
     return (
@@ -18,8 +18,8 @@ export default function MenuPage() {
 
   return (
     <main>
-      {categories.loading === true && <p>Loading ⏱</p>} {/* TODO - Spinner */}
-      {categories.error !== null && <p>Error 🚨</p>} {/* TODO - custom error */}
+      {categories.loading === true && <Spinner />}
+      {categories.error !== null && <BoxError />}
       {!categories.loading && categories.error === null && (
         <div className="page-menu">
           <h1>Menu</h1>

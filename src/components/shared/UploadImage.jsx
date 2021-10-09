@@ -1,8 +1,14 @@
 import React from "react";
 
-export default function UploadImage({ children, hookImage, hookImageURL }) {
+export default function UploadImage({
+  children,
+  hookImage,
+  hookImageURL,
+  isValid,
+}) {
   const [image, setImage] = hookImage;
   const [imageURL, setImageURL] = hookImageURL;
+
   return (
     <div className="upload">
       <div className="add">

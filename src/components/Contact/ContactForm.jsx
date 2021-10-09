@@ -1,6 +1,6 @@
 import { useState } from "react";
 import form from "../../assets/form.json";
-import { validateDate, validateTime } from "./ContactForm/formValidation";
+import { validateDate, validateTime } from "../../scripts/formValidation";
 import FormItem from "../../components/shared/FormItem";
 import FormSubmit from "../../components/shared/FormSubmit";
 
