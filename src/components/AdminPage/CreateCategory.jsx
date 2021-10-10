@@ -2,14 +2,8 @@
 import { useState } from "react";
 
 import form from "../../assets/form.json";
-import {
-  validateDescription,
-  validateTitle,
-} from "../../scripts/formValidation";
-import {
-  createCategoryBytes,
-  createCategoryURL,
-} from "../../scripts/crud-database";
+import { validateDescr, validateTitle } from "../../scripts/formValidation";
+import { createCategory, createCategoryURL } from "../../scripts/crud-database";
 import FormItem from "../shared/FormItem";
 import FormSubmit from "../shared/FormSubmit";
 import UploadImage from "../shared/UploadImage";
@@ -23,7 +17,7 @@ export default function CreateCategory({ categories }) {
 
   // Const
   const isTitleValid = validateTitle(title, categories);
-  const isDescriptionValid = validateDescription(description);
+  const isDescriptionValid = validateDescr(description);
   const isImageValid = imageURL.trim().length > 12 || typeof image === "object";
   const isAllValid = isTitleValid && isDescriptionValid && isImageValid;
 
@@ -36,7 +30,7 @@ export default function CreateCategory({ categories }) {
   function handleUpload(event) {
     event.preventDefault();
     if (typeof image === "object") {
-      createCategoryBytes(category, image);
+      createCategory(category, image);
     } else {
       createCategoryURL(category, imageURL);
     }
@@ -63,7 +57,6 @@ export default function CreateCategory({ categories }) {
         >
           Upload New category image
         </UploadImage>
-
         <FormSubmit isAllValid={isAllValid} />
       </form>
     </section>

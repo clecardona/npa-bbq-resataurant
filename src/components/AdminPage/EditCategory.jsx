@@ -2,19 +2,13 @@
 import { useState } from "react";
 
 import form from "../../assets/form.json";
-import {
-  updateCategoryBytes,
-  updateCategoryURL,
-  deleteCategory,
-} from "../../scripts/crud-database";
-import UploadImage from "../shared/UploadImage";
-import {
-  validateDescription,
-  validateTitle,
-} from "../../scripts/formValidation";
+import { updateCategory, updateCategoryURL } from "../../scripts/crud-database";
+import { validateDescr, validateTitle } from "../../scripts/formValidation";
 import Dropdown from "../shared/Dropdown";
 import FormItem from "../shared/FormItem";
 import FormSubmit from "../shared/FormSubmit";
+import DeleteSection from "./DeleteSection";
+import UploadImage from "../shared/UploadImage";
 
 export default function EditCategory({ categories }) {
   //Hooks
@@ -25,33 +19,16 @@ export default function EditCategory({ categories }) {
   const [imageURL, setImageURL] = useState("");
 
   //Const
-  const isButtonDisabled = category === "";
   const isTitleValid = validateTitle(title, categories);
-  const isDescriptionValid = validateDescription(description);
-  const isImageValid = imageURL.trim().length > 12 || typeof image === "object";
-  const isAllValid = isTitleValid && isDescriptionValid && isImageValid;
-
+  const isDescriptionValid = validateDescr(description);
   const newData = { title: title.toLowerCase(), description: description };
 
   //Methods
-  function handleDeleteCategory() {
-    if (
-      window.confirm(
-        "Are you sure you want to delete category " + category.title + " ?"
-      )
-    ) {
-      deleteCategory(category.id);
-      alert("Category " + category.title + " successfully deleted");
-    }
-  }
-
-  function handleUploadCategory(event) {
+  function handleUpload(event) {
     event.preventDefault();
-
     if (typeof image === "object") {
-      updateCategoryBytes(newData, image, category);
+      updateCategory(newData, image, category);
     } else {
-      console.log("boom");
       updateCategoryURL(newData, imageURL, category);
     }
   }
@@ -60,14 +37,9 @@ export default function EditCategory({ categories }) {
     <section className="section-admin">
       <h2> Edit Category</h2>
       <div className="drop-container">
-        <Dropdown
-          categories={categories}
-          handleClick={setCategory}
-          category={category}
-        />
+        <Dropdown items={categories} hook={[category, setCategory]} />
       </div>
-
-      <form onSubmit={handleUploadCategory}>
+      <form onSubmit={handleUpload}>
         <h3 className="admin-subtitle">Update Category</h3>
         <p className="admin-instructions">
           1. Select a category <br />
@@ -89,22 +61,9 @@ export default function EditCategory({ categories }) {
         >
           Upload New image
         </UploadImage>
-        <FormSubmit isAllValid={isAllValid} />
+        <FormSubmit isAllValid={category !== ""} />
       </form>
-      <form>
-        <h3 className="admin-subtitle">Delete Category</h3>
-        <p className="admin-instructions">
-          1. Select a category <br />
-          2. Click on "delete" button
-        </p>
-        <button
-          className="btn btn-main"
-          disabled={isButtonDisabled}
-          onClick={handleDeleteCategory}
-        >
-          <h4> Delete Category {category.title}</h4>
-        </button>
-      </form>
+      <DeleteSection element={category} />
     </section>
   );
 }

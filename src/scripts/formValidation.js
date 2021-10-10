@@ -9,7 +9,7 @@ export function validateTime(time) {
   return moment(time, "HH:mm", true).isValid();
 }
 
-export function validateDescription(description) {
+export function validateDescr(description) {
   return 10 < description.trim().length && description.trim().length < 150;
 }
 

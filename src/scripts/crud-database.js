@@ -9,7 +9,7 @@ const database = getFirestore(firebaseInstance);
 /*--------------CREATE -------------*/
 //CREATE CATEGORY
 // Create a category using upload image from client computer
-export async function createCategoryBytes(someCategory, someImage) {
+export async function createCategory(someCategory, someImage) {
   const newImageURL = await uploadImage(firebaseInstance, someImage);
   const newCategory = { ...someCategory, imageURL: newImageURL };
   createDoc(database, "categories", newCategory);
@@ -42,7 +42,7 @@ export async function createDishURL(someDish, someImageURL) {
 /*-------------- UPDATE -------------*/
 //UPDATE CATEGORY
 //Update catgory using bytes
-export async function updateCategoryBytes(newData, newImage, category) {
+export async function updateCategory(newData, newImage, category) {
   let updatedCategory = { ...category };
 
   if (newData.title !== "") {

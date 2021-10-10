@@ -5,7 +5,7 @@ import form from "../../assets/form.json";
 import { createDishBytes, createDishURL } from "../../scripts/crud-database";
 import {
   validateTitle,
-  validateDescription,
+  validateDescr,
   validatePrice,
 } from "../../scripts/formValidation";
 
@@ -27,7 +27,7 @@ export default function CreateDish({ categories }) {
   //Const
   const isCategorySelected = category !== "";
   const isTitleValid = validateTitle(title, categories);
-  const isDescriptionValid = validateDescription(description);
+  const isDescriptionValid = validateDescr(description);
   const areIngValid = ingredients.length > 0;
   const isPriceValid = validatePrice(price);
   const isImageValid = imageURL.trim().length > 12 || typeof image === "object";
@@ -67,11 +67,7 @@ export default function CreateDish({ categories }) {
         2. Fill all fields
       </p>
       <div className="drop-container">
-        <Dropdown
-          categories={categories}
-          handleClick={setCategory}
-          category={category}
-        />
+        <Dropdown items={categories} hook={[category, setCategory]} />
       </div>
       <form onSubmit={handleUpload}>
         <FormItem
