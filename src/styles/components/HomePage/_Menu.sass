@@ -2,11 +2,11 @@
   height: 100%
   @include page-layout
   h1
-    @include page-layout-h1
+    @include page-layout-title
+    background: $red
 
   .section-menu
     $card-height: 210px
-    height: 100%
 
     display: grid
     gap: 18px
@@ -15,6 +15,7 @@
 
     background: $gray3
     padding: 18px
+    margin-bottom: 24px
 
     @media only screen and (min-width: $tabletBreakpoint)
       grid-template-columns: 1fr 1fr

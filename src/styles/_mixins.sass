@@ -65,11 +65,30 @@
         max-width: 800px
         margin: auto
 
-@mixin page-layout-h1
+@mixin page-layout-title
     width: 100%
     text-align: center
     text-transform: capitalize
     padding: 12px 0
+    border-radius: 0 0 4px 4px
     @media only screen and (min-width: $desktopBreakpoint)
         text-align: left
         padding-left: 18px
+
+@mixin page-layout-description
+    width: 100%
+    max-height: 100px
+    overflow: hidden
+
+    @media only screen and (min-width: $desktopBreakpoint)
+        width: 800px
+        margin: auto
+
+    p
+        background: $gray3
+        padding: 12px 18px
+        @media only screen and (min-width:500px)
+            columns: 2
+            padding: 18px
+        @media only screen and (min-width: 800px)
+            columns: 3

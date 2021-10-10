@@ -4,6 +4,7 @@ header
 
   display: flex
   justify-content: flex-start
+  align-items: center
 
   background: $black
   overflow: hidden
@@ -16,25 +17,38 @@ header
     background: $white
     height: 100%
     width: 100px
+    border: none
     @include flex-full-centered
+    &:hover
+      background: $red
+      .home-shape
+        border-left: 20px solid $red
+      img
+        filter: invert(1)
 
     img
       width: 30px
 
-    &:hover img
-      @include color-svg-red
+    .home-shape
 
-  .home-shape
-    z-index: 3
-    position: relative
+      z-index: 3
+      position: absolute
+      top: -$header-height
+      margin-left: 200px
+      height: 0px
+      width: 0px
+      border: $header-height solid transparent
+      border-left: 20px solid $white
+      background: transparent
 
-    top: -$header-height
-    margin-right: 0px
-    height: 0px
-    width: 0px
-    border: $header-height solid transparent
-    border-left: 20px solid $white
-    background: transparent
+  .logo
+    display: none
+    @media screen and (min-width: 650px)
+      display: block
+      width: 100px
+      margin-left: 10vw
+
+      filter: brightness(0.8)
 
   nav
     background: transparent

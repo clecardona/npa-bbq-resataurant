@@ -3,20 +3,22 @@
   height: calc(100vh - 160px )
 
   .wrapper
+
     z-index: 1
     width: 100%
-    height: calc(100vh - 160px )
+    height: 100%
+
     display: grid
     justify-items: center
     align-items: center
     grid-template-columns: 1fr 1fr
-    grid-template-rows: 1fr min-content min-content 160px
+    grid-template-rows: 1fr min-content min-content 120px
     grid-template-areas: " img img" "title title" "subtitle subtitle" "btn btn"
     @media screen and (min-width: $tabletBreakpoint)
-      grid-template-rows: 1fr min-content min-content 300px
+      grid-template-rows: 1fr min-content min-content 1fr
       justify-items: center
       align-items: center
-      overflow: hidden
+      overflow-x: hidden
 
   h1,
   h2
@@ -29,7 +31,7 @@
     grid-area: subtitle
     font-weight: 200
 
-  .right-illustration
+  .illustration
     grid-area: img
     align-self: end
 

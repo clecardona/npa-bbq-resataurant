@@ -12,7 +12,7 @@ export default function HomePage() {
         <div className="wrapper">
           <h1>YETI BBQ</h1>
           <h3>Because meat matters</h3>
-          <img className="right-illustration" src={caravan} alt="" />
+          <img className="illustration" src={caravan} alt="" />
           <NavLink to="/menu" className="btn btn-ghost btn-300">
             <ButtonForward label="View Menu" />
           </NavLink>

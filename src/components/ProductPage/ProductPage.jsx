@@ -26,9 +26,6 @@ export default function ProductPage() {
         <main className="page-product">
           <Description product={product} />
           <Ingredients product={product} />
-          <section className="section-price">
-            <p>{product.price} Kr</p>
-          </section>
           <NavLink to={`/menu/${categoryID}`} className="btn btn-main btn-300">
             <ButtonBack label="Go back" />
           </NavLink>
