@@ -35,9 +35,11 @@ export default function EditCategory({ categories }) {
 
   return (
     <section className="section-admin">
-      <h2> Edit Category</h2>
+      <h2> Edit Dish</h2>
       <div className="drop-container">
-        <Dropdown items={categories} hook={[category, setCategory]} />
+        <Dropdown items={categories} hook={[category, setCategory]}>
+          Category
+        </Dropdown>
       </div>
       <form onSubmit={handleUpload}>
         <h3 className="admin-subtitle">Update Category</h3>
@@ -60,7 +62,7 @@ export default function EditCategory({ categories }) {
         </UploadImage>
         <FormSubmit isAllValid={category !== ""} />
       </form>
-      <DeleteSection element={category} />
+      <DeleteSection element={category}>Delete category</DeleteSection>
     </section>
   );
 }

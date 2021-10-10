@@ -1,46 +1,41 @@
-//NPN Packages
+//NPM Packages
 import { useState } from "react";
 
 import form from "../../assets/form.json";
-import { createDishBytes, createDishURL } from "../../scripts/crud-database";
+import { updateDish, updateDishURL } from "../../scripts/crud-database";
 import {
-  validateTitle,
   validateDescr,
+  validateTitle,
   validatePrice,
 } from "../../scripts/formValidation";
-
+import { getRelatedFood } from "../../scripts/foodMethods";
 import Dropdown from "../shared/Dropdown";
 import FormItem from "../shared/FormItem";
 import FormSubmit from "../shared/FormSubmit";
+import DeleteSection from "./DeleteSection";
 import UploadImage from "../shared/UploadImage";
 
-export default function CreateDish({ categories }) {
+export default function EditDish({ categories, dishes }) {
   //Hooks
+  const [category, setCategory] = useState("");
+  const [dish, setDish] = useState("");
+
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [ingredients, setIngredients] = useState([]);
   const [price, setPrice] = useState("");
-  const [category, setCategory] = useState("");
   const [image, setImage] = useState("");
   const [imageURL, setImageURL] = useState("");
 
   //Const
-  const isCategorySelected = category !== "";
+  const relatedDishes = getRelatedFood(dishes, category.id);
+
   const isTitleValid = validateTitle(title, categories);
   const isDescriptionValid = validateDescr(description);
   const areIngValid = ingredients.length > 0;
   const isPriceValid = validatePrice(price);
-  const isImageValid = imageURL.trim().length > 12 || typeof image === "object";
 
-  const isAllValid =
-    isTitleValid &&
-    isDescriptionValid &&
-    isImageValid &&
-    areIngValid &&
-    isPriceValid &&
-    isCategorySelected;
-
-  const dish = {
+  const newData = {
     title: title.toLowerCase(),
     description: description,
     ingredients: ingredients,
@@ -52,25 +47,30 @@ export default function CreateDish({ categories }) {
   function handleUpload(event) {
     event.preventDefault();
     if (typeof image === "object") {
-      createDishBytes(dish, image);
+      updateDish(newData, image, dish);
     } else {
-      createDishURL(dish, imageURL);
+      updateDishURL(newData, imageURL, dish);
     }
-    alert(dish.title + " successfully added to category " + category.title);
   }
 
   return (
     <section className="section-admin">
-      <h2>Create Dish</h2>
+      <h2> Edit Dish</h2>
       <div className="drop-container">
         <Dropdown items={categories} hook={[category, setCategory]}>
           Category
         </Dropdown>
+        <Dropdown items={relatedDishes} hook={[dish, setDish]}>
+          Dish
+        </Dropdown>
       </div>
+
       <form onSubmit={handleUpload}>
+        <h3 className="admin-subtitle">Update Dish</h3>
         <p className="admin-instructions">
           1. Select a category <br />
-          2. Fill all fields
+          2. Select a dish that belongs to the category <br />
+          3. Fill the field(s) you want to modify/update
         </p>
         <FormItem
           settings={form[4].settings}
@@ -99,11 +99,11 @@ export default function CreateDish({ categories }) {
           isValid={isPriceValid}
         />
         <UploadImage setImage={setImage} setImageURL={setImageURL}>
-          Upload New dish image
+          Upload New image
         </UploadImage>
-
-        <FormSubmit isAllValid={isAllValid} />
+        <FormSubmit isAllValid={category !== ""} />
       </form>
+      <DeleteSection element={dish}>Delete Dish</DeleteSection>
     </section>
   );
 }

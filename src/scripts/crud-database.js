@@ -78,6 +78,56 @@ export async function updateCategoryURL(newData, newImageURL, category) {
   alert(updatedCategory.title + " successfully updated ");
 }
 
+//UPDATE CATEGORY
+//Update catgory using bytes
+export async function updateDish(newData, newImage, dish) {
+  let updatedDish = { ...dish };
+
+  if (newData.title !== "") {
+    updatedDish.title = newData.title;
+  }
+  if (newData.description !== "") {
+    updatedDish.description = newData.description;
+  }
+  if (newData.ingredients !== []) {
+    updatedDish.ingredients = newData.ingredients;
+  }
+  if (newData.price !== "") {
+    updatedDish.price = newData.price;
+  }
+  if (newImage !== "") {
+    const newImageURL = await uploadImage(firebaseInstance, newImage);
+    updatedDish.imageURL = newImageURL;
+  }
+  console.log(updatedDish);
+  await modifyDoc(database, "dishes", dish.id, updatedDish);
+  alert(updatedDish.title + " successfully updated ");
+}
+
+//Update catgory using link URL for the image
+export async function updateDishURL(newData, newImageURL, dish) {
+  let updatedDish = { ...dish };
+
+  if (newData.title !== "") {
+    updatedDish.title = newData.title;
+  }
+  if (newData.description !== "") {
+    updatedDish.description = newData.description;
+  }
+  if (newData.ingredients !== []) {
+    updatedDish.ingredients = newData.ingredients;
+  }
+  if (newData.price !== "") {
+    updatedDish.price = newData.price;
+  }
+  if (newImageURL !== "") {
+    updatedDish.imageURL = newImageURL;
+  }
+  console.log(updatedDish);
+  await modifyDoc(database, "dishes", dish.id, updatedDish);
+  alert(updatedDish.title + " successfully updated ");
+}
+
 /*-------------- DELETE -------------*/
 // Delete category by id
 export async function deleteCategory(id) {

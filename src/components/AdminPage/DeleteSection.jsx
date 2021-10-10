@@ -1,6 +1,6 @@
 import { deleteCategory } from "../../scripts/crud-database";
 
-export default function DeleteSection({ element }) {
+export default function DeleteSection({ element, children }) {
   function handleDeleteCategory() {
     if (
       window.confirm(
@@ -13,9 +13,9 @@ export default function DeleteSection({ element }) {
   }
   return (
     <form>
-      <h3 className="admin-subtitle">Delete Category</h3>
+      <h3 className="admin-subtitle">{children}</h3>
       <p className="admin-instructions">
-        1. Select a category <br />
+        1. Select the element on top of the page <br />
         2. Click on "delete" button
       </p>
       <button
@@ -23,7 +23,9 @@ export default function DeleteSection({ element }) {
         disabled={element === ""}
         onClick={handleDeleteCategory}
       >
-        <h4> Delete Category {element.title}</h4>
+        <h4>
+          {children} {element.title}
+        </h4>
       </button>
     </form>
   );

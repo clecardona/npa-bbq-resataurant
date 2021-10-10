@@ -2,17 +2,19 @@
 import { useState } from "react";
 
 import useFetch from "../../hooks/useFetch";
-import AddCategory from "./CreateCategory";
 import BoxError from "../shared/BoxError";
+import CreateCategory from "./CreateCategory";
 import CreateDish from "./CreateDish";
-import CreateCategory from "./EditCategory";
+import EditCategory from "./EditCategory";
+import EditDish from "./EditDish";
 import Sorter from "./Sorter";
 import Spinner from "../shared/Spinner";
 
 export default function AdminPage() {
   //Hooks
-  const [selection, setSelection] = useState("edit-cat");
+  const [selection, setSelection] = useState("edit-dish");
   const categories = useFetch("categories");
+  const dishes = useFetch("dishes");
 
   return (
     <div className="page-admin">
@@ -23,13 +25,16 @@ export default function AdminPage() {
           <div className="page-admin">
             <Sorter hook={[selection, setSelection]} />
             {selection === "new-cat" && (
-              <AddCategory categories={categories.data} />
+              <CreateCategory categories={categories.data} />
             )}
             {selection === "new-dish" && (
               <CreateDish categories={categories.data} />
             )}
             {selection === "edit-cat" && (
-              <CreateCategory categories={categories.data} />
+              <EditCategory categories={categories.data} />
+            )}
+            {selection === "edit-dish" && (
+              <EditDish categories={categories.data} dishes={dishes.data} />
             )}
           </div>
         </main>

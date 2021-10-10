@@ -7,18 +7,32 @@
     @media only screen and (min-width: $desktopBreakpoint)
         margin: 24px auto
 
+    h2
+        display: flex
+        align-items: center
+        height: 44px
+        padding: 0 12px
+        margin-bottom: 44px
+        @media only screen and (min-width: $desktopBreakpoint)
+            padding: 0
     .drop-container
         position: absolute
+        margin-top: 44px
+
         width: 100vw
         max-width: 800px
+        padding: 0 12px
 
-        display: flex
-        justify-content: flex-end
+        display: grid
+        gap: 12px
+        grid-auto-flow: column
+        grid-auto-columns: 1fr
+        justify-content: center
+        @media only screen and (min-width: $desktopBreakpoint)
+            padding: 0
         .dropdown
             width: 100%
-            max-width: 210px
-            margin-left: 120px
-            padding: 0 12px
+
             .select-ghost h4,.caret h4
                 font-size: 12px
 
@@ -26,13 +40,6 @@
                 padding: 0
                 .select-ghost h4,.caret h4
                     font-size: unset
-
-    h2
-        display: flex
-        align-items: center
-        height: 44px
-        padding: 0 12px
-        @media only screen and (min-width: $desktopBreakpoint)
 
     .admin-subtitle,.admin-instructions
         width: 100%

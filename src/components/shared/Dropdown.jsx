@@ -2,7 +2,7 @@ import { useState } from "react";
 import DropdownItem from "./DropdownItem";
 import down from "../../assets/icns/down.svg";
 
-export default function Dropdown({ items, hook }) {
+export default function Dropdown({ items, hook, children }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const [itemSelected, setItemSelected] = hook;
@@ -29,7 +29,9 @@ export default function Dropdown({ items, hook }) {
           setIsOpen(!isOpen);
         }}
       >
-        <h4>{itemSelected === "" ? "Select Category" : itemSelected.title} </h4>
+        <h4>
+          {itemSelected === "" ? `Select ${children}` : itemSelected.title}{" "}
+        </h4>
         <img src={down} alt="down" className="dropdown-arrow" />
       </button>
 
