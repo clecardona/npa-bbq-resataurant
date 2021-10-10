@@ -2,20 +2,19 @@ import { useState } from "react";
 
 import useFetch from "../../hooks/useFetch";
 import AddCategory from "./CreateCategory";
-import Sorter from "./Sorter";
+import BoxError from "../shared/BoxError";
 import CreateDish from "./CreateDish";
 import CreateCategory from "./EditCategory";
+import Sorter from "./Sorter";
 import Spinner from "../shared/Spinner";
-import BoxError from "../shared/BoxError";
 
 export default function AdminPage() {
-  //hooks
+  //Hooks
   const [selection, setSelection] = useState("edit-cat");
   const categories = useFetch("categories");
 
-  // Methods
   return (
-    <>
+    <div className="page-admin">
       {categories.loading === true && <Spinner />}
       {categories.error !== null && <BoxError />}
       {!categories.loading && categories.error === null && (
@@ -34,6 +33,6 @@ export default function AdminPage() {
           </div>
         </main>
       )}
-    </>
+    </div>
   );
 }
