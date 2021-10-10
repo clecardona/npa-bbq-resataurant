@@ -55,10 +55,7 @@ export default function EditCategory({ categories }) {
           hook={[description, setDescription]}
           isValid={isDescriptionValid}
         />
-        <UploadImage
-          hookImage={[image, setImage]}
-          hookImageURL={[imageURL, setImageURL]}
-        >
+        <UploadImage setImage={setImage} setImageURL={setImageURL}>
           Upload New image
         </UploadImage>
         <FormSubmit isAllValid={category !== ""} />

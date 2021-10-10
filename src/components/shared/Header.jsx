@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-import logo from "../../assets/img/logo.png";
+import logo from "../../assets/img/logo-mobile.png";
 
 export default function Header() {
   return (

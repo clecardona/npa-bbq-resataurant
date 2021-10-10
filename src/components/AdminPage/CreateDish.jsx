@@ -61,15 +61,15 @@ export default function CreateDish({ categories }) {
 
   return (
     <section className="section-admin">
-      <h2>Create a new Dish</h2>
-      <p className="admin-instructions">
-        1. Select a category <br />
-        2. Fill all fields
-      </p>
+      <h2>Create Dish</h2>
       <div className="drop-container">
         <Dropdown items={categories} hook={[category, setCategory]} />
       </div>
       <form onSubmit={handleUpload}>
+        <p className="admin-instructions">
+          1. Select a category <br />
+          2. Fill all fields
+        </p>
         <FormItem
           settings={form[4].settings}
           hook={[title, setTitle]}
@@ -96,11 +96,7 @@ export default function CreateDish({ categories }) {
           hook={[price, setPrice]}
           isValid={isPriceValid}
         />
-
-        <UploadImage
-          hookImage={[image, setImage]}
-          hookImageURL={[imageURL, setImageURL]}
-        >
+        <UploadImage setImage={setImage} setImageURL={setImageURL}>
           Upload New dish image
         </UploadImage>
 

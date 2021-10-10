@@ -1,14 +1,6 @@
 import React from "react";
 
-export default function UploadImage({
-  children,
-  hookImage,
-  hookImageURL,
-  isValid,
-}) {
-  const [image, setImage] = hookImage;
-  const [imageURL, setImageURL] = hookImageURL;
-
+export default function UploadImage({ children, setImage, setImageURL }) {
   return (
     <div className="upload">
       <div className="add">
@@ -24,7 +16,11 @@ export default function UploadImage({
       </div>
       <div className="url">
         <p>... or copy/paste link :</p>
-        <input type="text" onChange={(e) => setImageURL(e.target.value)} />
+        <input
+          type="text"
+          onChange={(e) => setImageURL(e.target.value)}
+          placeholder=" https://..."
+        />
       </div>
     </div>
   );

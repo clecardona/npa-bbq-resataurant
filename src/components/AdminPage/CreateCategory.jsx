@@ -38,9 +38,9 @@ export default function CreateCategory({ categories }) {
 
   return (
     <section className="section-admin">
-      <h2>Create a new Category</h2>
-      <p className="admin-instructions">All fields are required</p>
+      <h2>Create Category</h2>
       <form className="form-admin" onSubmit={handleUpload}>
+        <p className="admin-instructions">All fields are required</p>
         <FormItem
           settings={form[4].settings}
           hook={[title, setTitle]}
@@ -51,10 +51,7 @@ export default function CreateCategory({ categories }) {
           hook={[description, setDescription]}
           isValid={isDescriptionValid}
         />
-        <UploadImage
-          hookImage={[image, setImage]}
-          hookImageURL={[imageURL, setImageURL]}
-        >
+        <UploadImage setImage={setImage} setImageURL={setImageURL}>
           Upload New category image
         </UploadImage>
         <FormSubmit isAllValid={isAllValid} />

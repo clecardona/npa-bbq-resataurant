@@ -4,11 +4,11 @@
 
     display: grid
     gap: 8px
+    @media only screen and (min-width: $desktopBreakpoint)
+        margin: 24px auto
 
     .drop-container
-
         position: absolute
-
         width: 100vw
         max-width: 800px
 
@@ -28,11 +28,11 @@
                     font-size: unset
 
     h2
+        display: flex
+        align-items: center
         height: 44px
         padding: 0 12px
         @media only screen and (min-width: $desktopBreakpoint)
-            padding: 0
-            padding-top: 0px
 
     .admin-subtitle,.admin-instructions
         width: 100%
