@@ -14,9 +14,10 @@ header
     border-bottom: 1px solid $white
 
   .home
+    $home-width: 200px
     background: $white
     height: 100%
-    width: 100px
+    width: $home-width
     border: none
     @include flex-full-centered
     &:hover
@@ -27,14 +28,14 @@ header
         filter: invert(1)
 
     img
-      width: 30px
+      height: 40px
+      filter: invert(0.2)
 
     .home-shape
-
       z-index: 3
       position: absolute
+      left: $home-width
       top: -$header-height
-      margin-left: 200px
       height: 0px
       width: 0px
       border: $header-height solid transparent

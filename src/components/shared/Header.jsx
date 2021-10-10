@@ -6,10 +6,10 @@ export default function Header() {
   return (
     <header>
       <NavLink to="/" className="home">
-        <img src={home} alt="Home" />
+        <img src={logo} alt="Home" />
         <div className="home-shape" />
       </NavLink>
-      <img className="logo" src={logo} alt="YETI BBQ" />
+      {/*  <img className="logo" src={logo} alt="YETI BBQ" /> */}
       <nav>
         <NavLink to="/menu">
           <h4>Menu</h4>

@@ -12,7 +12,7 @@
   overflow-x: scroll
   padding: 0 18px
 
-  @media only screen and (min-width: $desktopBreakpoint)
+  @media only screen and (min-width: $tabletBreakpoint)
     grid-template-columns: 1fr 1fr
     grid-auto-flow: unset
     height: min-content
@@ -34,7 +34,7 @@
 
     grid-template-areas: "title img""description img ""description price"
     @include shadow-card
-    @media only screen and (min-width: $desktopBreakpoint)
+    @media only screen and (min-width: $tabletBreakpoint)
       width: 100%
 
     img
