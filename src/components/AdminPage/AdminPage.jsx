@@ -10,7 +10,7 @@ import BoxError from "../shared/BoxError";
 
 export default function AdminPage() {
   //hooks
-  const [isCategory, setIsCategory] = useState("edit-cat");
+  const [selection, setSelection] = useState("edit-cat");
   const categories = useFetch("categories");
 
   // Methods
@@ -21,14 +21,14 @@ export default function AdminPage() {
       {!categories.loading && categories.error === null && (
         <main>
           <div className="page-admin">
-            <Sorter hook={[isCategory, setIsCategory]} />
-            {isCategory === "new-cat" && (
+            <Sorter hook={[selection, setSelection]} />
+            {selection === "new-cat" && (
               <AddCategory categories={categories.data} />
             )}
-            {isCategory === "new-dish" && (
+            {selection === "new-dish" && (
               <CreateDish categories={categories.data} />
             )}
-            {isCategory === "edit-cat" && (
+            {selection === "edit-cat" && (
               <CreateCategory categories={categories.data} />
             )}
           </div>

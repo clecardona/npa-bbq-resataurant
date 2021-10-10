@@ -1,8 +1,7 @@
+//NPM Packages
 import { useState } from "react";
+
 import form from "../../assets/form.json";
-import FormItem from "../shared/FormItem";
-import FormSubmit from "../shared/FormSubmit";
-import Dropdown from "../shared/Dropdown";
 import {
   updateCategoryBytes,
   updateCategoryURL,
@@ -13,24 +12,28 @@ import {
   validateDescription,
   validateTitle,
 } from "../../scripts/formValidation";
+import Dropdown from "../shared/Dropdown";
+import FormItem from "../shared/FormItem";
+import FormSubmit from "../shared/FormSubmit";
 
 export default function EditCategory({ categories }) {
+  //Hooks
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
   const [image, setImage] = useState("");
   const [imageURL, setImageURL] = useState("");
 
+  //Const
   const isButtonDisabled = category === "";
-
   const isTitleValid = validateTitle(title, categories);
   const isDescriptionValid = validateDescription(description);
-  const isImageValid = imageURL.trim().length > 12 || typeof image == "object";
+  const isImageValid = imageURL.trim().length > 12 || typeof image === "object";
   const isAllValid = isTitleValid && isDescriptionValid && isImageValid;
 
-  const newData = { title: title, description: description };
-  console.log(newData, imageURL);
+  const newData = { title: title.toLowerCase(), description: description };
 
+  //Methods
   function handleDeleteCategory() {
     if (
       window.confirm(

@@ -1,7 +1,7 @@
+//NPM packages
 import { useState } from "react";
+
 import form from "../../assets/form.json";
-import FormItem from "../shared/FormItem";
-import FormSubmit from "../shared/FormSubmit";
 import {
   validateDescription,
   validateTitle,
@@ -10,21 +10,25 @@ import {
   createCategoryBytes,
   createCategoryURL,
 } from "../../scripts/crud-database";
+import FormItem from "../shared/FormItem";
+import FormSubmit from "../shared/FormSubmit";
 import UploadImage from "../shared/UploadImage";
 
 export default function CreateCategory({ categories }) {
+  // Hooks
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
   const [imageURL, setImageURL] = useState("");
 
+  // Const
   const isTitleValid = validateTitle(title, categories);
   const isDescriptionValid = validateDescription(description);
-  const isImageValid = imageURL.trim().length > 12 || typeof image == "object";
+  const isImageValid = imageURL.trim().length > 12 || typeof image === "object";
   const isAllValid = isTitleValid && isDescriptionValid && isImageValid;
 
   const category = {
-    title: title,
+    title: title.toLowerCase(),
     description: description,
   };
 
