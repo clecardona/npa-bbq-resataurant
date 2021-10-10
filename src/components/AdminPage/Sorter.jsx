@@ -1,51 +1,23 @@
-export default function Sorter({ hook }) {
-  const [isCategory, setIsCategory] = hook;
+import SortButton from "./SortButton";
 
+export default function Sorter({ hook }) {
   return (
     <section className="section-sorter">
-      <button
-        className={
-          isCategory === "new-cat" ? "btn btn-active " : "btn btn-inactive"
-        }
-        onClick={() => {
-          setIsCategory("new-cat");
-        }}
-      >
-        <h4>Create Category</h4>
-      </button>
+      <SortButton target="new-cat" hook={hook}>
+        Create Category
+      </SortButton>
 
-      <button
-        className={
-          isCategory === "new-dish" ? "btn btn-active " : "btn btn-inactive"
-        }
-        onClick={() => {
-          setIsCategory("new-dish");
-        }}
-      >
-        <h4>Create Dish</h4>
-      </button>
+      <SortButton target="new-dish" hook={hook}>
+        Create Dish
+      </SortButton>
 
-      <button
-        className={
-          isCategory === "edit-cat" ? "btn btn-active " : "btn btn-inactive"
-        }
-        onClick={() => {
-          setIsCategory("edit-cat");
-        }}
-      >
-        <h4>Edit Category</h4>
-      </button>
+      <SortButton target="edit-cat" hook={hook}>
+        Edit Category
+      </SortButton>
 
-      <button
-        className={
-          isCategory === "edit-dish" ? "btn btn-active " : "btn btn-inactive"
-        }
-        onClick={() => {
-          setIsCategory("edit-dish");
-        }}
-      >
-        <h4>Edit Dish</h4>
-      </button>
+      <SortButton target="edit-dish" hook={hook}>
+        Edit Dish
+      </SortButton>
     </section>
   );
 }
