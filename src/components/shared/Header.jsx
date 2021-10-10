@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import home from "../../assets/icns/home.svg";
+
 import logo from "../../assets/img/logo.png";
 
 export default function Header() {
@@ -9,7 +9,6 @@ export default function Header() {
         <img src={logo} alt="Home" />
         <div className="home-shape" />
       </NavLink>
-      {/*  <img className="logo" src={logo} alt="YETI BBQ" /> */}
       <nav>
         <NavLink to="/menu">
           <h4>Menu</h4>
