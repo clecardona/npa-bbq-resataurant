@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function UploadImage({ children, setImage, setImageURL }) {
+export default function UploadImage({ setImage, setImageURL }) {
   return (
     <div className="upload">
       <div className="add">
@@ -12,7 +12,7 @@ export default function UploadImage({ children, setImage, setImageURL }) {
             onChange={(e) => setImage(e.target.files[0])}
           />
         </label>
-        <p>{children}</p>
+        <p>Upload Image</p>
       </div>
       <div className="url">
         <p>... or copy/paste link :</p>

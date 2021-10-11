@@ -1,6 +1,5 @@
-[
-  {
-    "id": 1,
+{
+  "fullname": {
     "settings": {
       "type": "text",
       "label": "Enter your full name",
@@ -9,8 +8,7 @@
       "className": "input-name"
     }
   },
-  {
-    "id": 2,
+  "email": {
     "settings": {
       "type": "email",
       "label": "Enter your email",
@@ -19,9 +17,7 @@
       "className": "input-email"
     }
   },
-  {
-    "id": 3,
-
+  "date": {
     "settings": {
       "type": "date",
       "label": "Enter a date",
@@ -30,8 +26,7 @@
       "className": "input-date"
     }
   },
-  {
-    "id": 4,
+  "time": {
     "settings": {
       "label": "Enter a time",
       "type": "time",
@@ -40,8 +35,7 @@
       "className": "input-time"
     }
   },
-  {
-    "id": 5,
+  "title": {
     "settings": {
       "label": "",
       "type": "text",
@@ -50,8 +44,7 @@
       "className": "input-title"
     }
   },
-  {
-    "id": 6,
+  "description": {
     "settings": {
       "label": "",
       "type": "text",
@@ -60,8 +53,7 @@
       "className": "input-description"
     }
   },
-  {
-    "id": 7,
+  "ingredients": {
     "settings": {
       "label": "",
       "type": "text",
@@ -70,8 +62,7 @@
       "className": "input-ingredient"
     }
   },
-  {
-    "id": 8,
+  "price": {
     "settings": {
       "label": "",
       "type": "text",
@@ -80,4 +71,4 @@
       "className": "input-price"
     }
   }
-]
+}

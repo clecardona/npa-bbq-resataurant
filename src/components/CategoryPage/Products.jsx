@@ -8,6 +8,7 @@ export default function Products({ category }) {
   // Const
   const listOfDishes = getRelatedFood(dishes.data, category.id);
 
+  // Component
   const ProductsItems = listOfDishes.map((item) => {
     console.log(item.category);
     return (

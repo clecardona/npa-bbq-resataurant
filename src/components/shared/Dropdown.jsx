@@ -4,7 +4,6 @@ import down from "../../assets/icns/down.svg";
 
 export default function Dropdown({ items, hook, children }) {
   const [isOpen, setIsOpen] = useState(false);
-
   const [itemSelected, setItemSelected] = hook;
   const ListItems = items.map((item) => {
     return (
@@ -40,7 +39,17 @@ export default function Dropdown({ items, hook, children }) {
           {items.length === 0 && (
             <p className="dropdown-item">no elements found</p>
           )}
-          <ul>{ListItems}</ul>
+          <ul>
+            {ListItems}
+            <DropdownItem
+              onClick={() => {
+                setItemSelected("");
+                setIsOpen(false);
+              }}
+            >
+              -
+            </DropdownItem>
+          </ul>
         </div>
       )}
     </div>

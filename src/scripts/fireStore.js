@@ -36,7 +36,6 @@ export async function modifyDoc(db, path, id, data) {
 
 // Delete document
 export async function delDoc(db, path, id) {
-  const docReference = doc(db, path, id);
-  deleteDoc(docReference);
-  console.log("Document deleted ");
+  deleteDoc(doc(db, path, id));
+  console.log("delDOC");
 }
