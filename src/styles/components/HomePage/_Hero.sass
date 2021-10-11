@@ -1,6 +1,7 @@
 .section-hero
   @include flex-full-centered
   height: calc(100vh - 160px )
+  background: $black
 
   .wrapper
 
@@ -50,7 +51,11 @@
     height: calc(100vh - 160px )
     width: 100vw
     object-fit: cover
-    object-position: bottom
+    object-position: top
     filter: blur(0px) brightness(.15)
+    background-color: red
 
     @include absolute-centered
+
+    @media screen and (min-width: $tabletBreakpoint)
+      object-position: bottom
