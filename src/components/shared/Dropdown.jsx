@@ -6,7 +6,7 @@ export default function Dropdown({ items, hook, children }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const [itemSelected, setItemSelected] = hook;
-  const Categories = items.map((item) => {
+  const ListItems = items.map((item) => {
     return (
       <DropdownItem
         key={item.id}
@@ -37,7 +37,10 @@ export default function Dropdown({ items, hook, children }) {
 
       {isOpen && (
         <div className="caret">
-          <ul>{Categories}</ul>
+          {items.length === 0 && (
+            <p className="dropdown-item">no elements found</p>
+          )}
+          <ul>{ListItems}</ul>
         </div>
       )}
     </div>
