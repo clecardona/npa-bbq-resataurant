@@ -6,7 +6,7 @@ export function getCurrentCategory(array, id) {
 
 export function getRelatedFood(array, categoryID) {
   return array.filter((item) => {
-    return item.category === categoryID;
+    return item.categoryID === categoryID;
   });
 }
 

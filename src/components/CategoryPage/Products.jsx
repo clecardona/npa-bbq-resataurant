@@ -1,5 +1,7 @@
 import useFetch from "../../hooks/useFetch";
 import { getRelatedFood } from "../../scripts/foodMethods";
+import Spinner from "../shared/Spinner";
+import BoxError from "../shared/BoxError";
 
 export default function Products({ category }) {
   // Hook
@@ -10,9 +12,12 @@ export default function Products({ category }) {
 
   // Component
   const ProductsItems = listOfDishes.map((item) => {
-    console.log(item.category);
     return (
-      <a key={item.id} href={`./${item.category}/${item.id}`} className="card">
+      <a
+        key={item.id}
+        href={`./${item.categoryID}/${item.id}`}
+        className="card"
+      >
         <img src={item.imageURL} alt="img" />
         <h3 className="title">{item.title}</h3>
         <p className="description">{item.description}</p>
@@ -23,8 +28,8 @@ export default function Products({ category }) {
 
   return (
     <>
-      {dishes.loading === true && <p>Loading ⏱</p>} {/* TODO - Spinner */}
-      {dishes.error !== null && <p>Error 🚨</p>} {/* TODO - custom error */}
+      {dishes.loading === true && <Spinner />}
+      {dishes.error !== null && <BoxError />}
       {!dishes.loading && dishes.error === null && (
         <>
           {listOfDishes.length === 0 ? (

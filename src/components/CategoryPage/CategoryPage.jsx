@@ -27,9 +27,7 @@ export default function CategoryPage() {
           <section className="section-description">
             <p>{currentCategory.description}</p>
           </section>
-
           <Products category={currentCategory} />
-
           <NavLink to={`/menu`} className="btn btn-main btn-300">
             <ButtonBack label="Go back to Menu" />
           </NavLink>

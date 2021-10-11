@@ -40,7 +40,7 @@ export default function Create({ categories }) {
     description: description,
     ingredients: ingredients,
     price: parseInt(price),
-    category: category.id,
+    categoryID: category.id,
   };
 
   //Methods

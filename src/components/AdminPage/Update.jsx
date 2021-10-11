@@ -23,7 +23,7 @@ export default function UpdateForm({ dataSelected, categories }) {
     description: description,
     ingredients: ingredients,
     price: parseInt(price),
-    category: category.id,
+    categoryID: category.id,
   };
   const newCategory = {
     title: title.toLowerCase(),
