@@ -27,7 +27,7 @@ export default function ProductPage() {
           <Description product={product} />
           <Ingredients product={product} />
           <NavLink to={`/menu/${categoryID}`} className="btn btn-main btn-300">
-            <ButtonBack label="Go back" />
+            <ButtonBack label="Go back to category" />
           </NavLink>
         </main>
       )}

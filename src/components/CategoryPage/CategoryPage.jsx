@@ -31,7 +31,7 @@ export default function CategoryPage() {
           <Products category={currentCategory} />
 
           <NavLink to={`/menu`} className="btn btn-main btn-300">
-            <ButtonBack label="Go back" />
+            <ButtonBack label="Go back to Menu" />
           </NavLink>
         </main>
       )}
