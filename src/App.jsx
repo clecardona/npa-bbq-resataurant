@@ -1,6 +1,7 @@
 import "./styles/base.sass";
-import React from "react";
+import React, { useContext } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { FoodContext } from "./state/FoodProvider";
 
 import Page404 from "./components/404";
 import AdminPage from "./components/AdminPage/AdminPage";

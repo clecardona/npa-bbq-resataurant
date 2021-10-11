@@ -1,8 +1,13 @@
+import { useContext } from "react";
+
 import useFetch from "../../hooks/useFetch";
 import Spinner from "../shared/Spinner";
 import BoxError from "../shared/BoxError";
+import { FoodContext } from "../../state/FoodProvider";
 
 export default function MenuPage() {
+  const value = useContext(FoodContext);
+  console.log(value);
   // Hooks
   const categories = useFetch("categories");
 
