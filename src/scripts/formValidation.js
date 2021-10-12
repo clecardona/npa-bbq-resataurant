@@ -27,9 +27,7 @@ function titleFinder(title, array) {
 }
 
 export function valPrice(price) {
-  return (
-    price.length > 0 && Number.isInteger(parseInt(price)) && parseInt(price) > 0
-  );
+  return price > 0;
 }
 
 export function valIng(ingredients) {
@@ -43,11 +41,29 @@ export function isCategoryValid(category, categories) {
   return valTitle(category.title, categories) && valDescr(category.description);
 }
 
-export function isDishValid(dish, categories) {
-  return (
-    valTitle(dish.title, categories) &&
-    valDescr(dish.description) &&
-    valIng(dish.ingredients) &&
-    valPrice(dish.price)
-  );
+export function validCategory(category, categories) {
+  const result = {
+    title: valTitle(category.title, categories),
+    description: valDescr(category.description),
+  };
+  return result;
+}
+
+export function validElement(element, categories) {
+  const result = {
+    title: valTitle(element.title, categories),
+    description: valDescr(element.description),
+    ingredients: valIng(element.ingredients),
+    price: valPrice(element.price),
+    category:
+      valTitle(element.title, categories) && valDescr(element.description),
+
+    dish:
+      valTitle(element.title, categories) &&
+      valDescr(element.description) &&
+      valIng(element.ingredients) &&
+      valPrice(element.price),
+  };
+
+  return result;
 }

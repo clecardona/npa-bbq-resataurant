@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-import { valDescr, valTitle, valPrice } from "../../scripts/formValidation";
-import { updateCategory, updateDish } from "../../scripts/crud-database";
-import form from "../../assets/form.json";
-import FormItem from "../shared/FormItem";
+import { validElement } from "../../scripts/formValidation";
+import { updateCat, updateDish } from "../../scripts/crud-database";
 import FormSubmit from "../shared/FormSubmit";
+import FormDish from "./FormDish";
+import FormCategory from "./FormCategory";
 import UploadImage from "../shared/UploadImage";
 
 export default function UpdateForm({ dataSelected, categories }) {
@@ -15,36 +15,27 @@ export default function UpdateForm({ dataSelected, categories }) {
   const [price, setPrice] = useState("");
   const [image, setImage] = useState("");
   const [imageURL, setImageURL] = useState("");
-
+  //Const
   const { category, dish } = dataSelected;
-
-  const newDish = {
+  const newData = {
     title: title.toLowerCase(),
     description: description,
     ingredients: ingredients,
     price: parseInt(price),
     categoryID: category.id,
   };
-  const newCategory = {
-    title: title.toLowerCase(),
-    description: description,
-  };
+  const isElementValid = validElement(newData, categories);
+  const isBytes = typeof image === "object";
+
+  console.log(newData.price, typeof newData.price, isElementValid.price);
 
   //Methods
   function handleUpdate(event) {
     event.preventDefault();
     if (dish) {
-      if (typeof image === "object") {
-        updateDish(newDish, image, dish);
-      } else {
-        updateDish(newDish, imageURL, dish);
-      }
+      updateDish(newData, isBytes ? image : imageURL, dish);
     } else {
-      if (typeof image === "object") {
-        updateCategory(newCategory, image, category);
-      } else {
-        updateCategory(newCategory, imageURL, category);
-      }
+      updateCat(newData, isBytes ? image : imageURL, category);
     }
   }
   return (
@@ -54,34 +45,17 @@ export default function UpdateForm({ dataSelected, categories }) {
         - First select a category <br />- Select a dish if you want to update a
         dish <br />- Fill the field(s) you want to modify/update
       </p>
-      <FormItem
-        settings={form.title.settings}
-        hook={[title, setTitle]}
-        isValid={valTitle(title, categories)}
-      />
-      <FormItem
-        settings={form.description.settings}
-        hook={[description, setDescription]}
-        isValid={valDescr(description)}
+      <FormCategory
+        hookTitle={[title, setTitle]}
+        hookDescription={[description, setDescription]}
+        isValid={isElementValid}
       />
       {dish && (
-        <>
-          <FormItem
-            settings={form.ingredients.settings}
-            hook={[
-              ingredients.join(" "),
-              (str) => {
-                setIngredients(str.split(" "));
-              },
-            ]}
-            isValid={ingredients.length > 0}
-          />
-          <FormItem
-            settings={form.price.settings}
-            hook={[price, setPrice]}
-            isValid={valPrice(price)}
-          />
-        </>
+        <FormDish
+          hookIng={[ingredients, setIngredients]}
+          hookPrice={[price, setPrice]}
+          isValid={isElementValid}
+        />
       )}
       <UploadImage setImage={setImage} setImageURL={setImageURL} />
       <FormSubmit isAllValid={category !== ""} />

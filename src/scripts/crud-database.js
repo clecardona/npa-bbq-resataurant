@@ -18,14 +18,8 @@ export async function createCategory(someCategory, someImage) {
   }
   const newCategory = { ...someCategory, imageURL: newImageURL };
   createDoc(database, "categories", newCategory);
+  alert(newCategory.title + " successfully added to categories");
 }
-
-// Create a category using image URL
-/* export async function createCategoryURL(someCategory, someImageURL) {
-  const newCategory = { ...someCategory, imageURL: someImageURL };
-  createDoc(database, "categories", newCategory);
-  alert(newCategory.title + " successfully added to category ");
-} */
 
 //CREATE DISH
 //Create a dish
@@ -38,20 +32,15 @@ export async function createDish(someDish, someImage) {
   }
   const newDish = { ...someDish, imageURL: newImageURL };
   createDoc(database, "dishes", newDish);
+  alert(newDish.title + " added to category # " + newDish.categoryID);
 }
-
-//Create a dish using URL link
-/* export async function createDishURL(someDish, someImageURL) {
-  const newDish = { ...someDish, imageURL: someImageURL };
-  createDoc(database, "dishes", newDish);
-} */
 
 /*-------------- READ -------------*/
 
 /*-------------- UPDATE -------------*/
 //UPDATE CATEGORY
 //Update category
-export async function updateCategory(newData, newImage, category) {
+export async function updateCat(newData, newImage, category) {
   let updatedCategory = { ...category };
 
   if (newData.title !== "") {
