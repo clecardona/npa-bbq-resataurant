@@ -11,7 +11,6 @@ import {
 // Create file
 export async function createDoc(db, path, data) {
   const docRef = await addDoc(collection(db, path), data);
-  console.log("Document written with ID: ", docRef.id);
 }
 
 // Read files
@@ -29,11 +28,9 @@ export async function getCollection(db, path) {
 export async function modifyDoc(db, path, id, data) {
   const docReference = doc(db, path, id);
   await updateDoc(docReference, data);
-  console.log("Document updated ");
 }
 
 // Delete document
 export async function delDoc(db, path, id) {
   deleteDoc(doc(db, path, id));
-  console.log("delDOC");
 }

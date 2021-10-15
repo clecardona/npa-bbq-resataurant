@@ -5,8 +5,6 @@ const storage = getStorage();
 
 export default async function uploadImage(firebaseContext, file) {
   const myRef = ref(storage, `${file.name}_${Date.now()}`);
-  await uploadBytes(myRef, file).then((snapshot) => {
-    console.log("Uploaded a blob or file!");
-  });
+  await uploadBytes(myRef, file).then((snapshot) => {});
   return getDownloadURL(myRef);
 }
