@@ -35,7 +35,7 @@ These are the instructions to run the project:
 
 ### 4.1 Requirement gathering
 
-[Google Docs link](https://docs.google.com/document/d/1TQwhMYjaitkz9uWDMuHwNVJ41GdFJif0dMD-3zO3eJQ/edit
+[Google Docs link](https://docs.google.com/document/d/1TQwhMYjaitkz9uWDMuHwNVJ41GdFJif0dMD-3zO3eJQ/edit)
 
 ### 4.2 Project spreadsheet
 
