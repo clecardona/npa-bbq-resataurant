@@ -27,8 +27,6 @@ export default function UpdateForm({ dataSelected, categories }) {
   const isElementValid = validElement(newData, categories);
   const isBytes = typeof image === "object";
 
-  console.log(newData.price, typeof newData.price, isElementValid.price);
-
   //Methods
   function handleUpdate(event) {
     event.preventDefault();
