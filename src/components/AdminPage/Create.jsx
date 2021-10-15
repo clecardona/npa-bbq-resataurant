@@ -1,4 +1,3 @@
-//NPM Packages
 import { useState } from "react";
 
 import { createCategory, createDish } from "../../scripts/crud-database";
@@ -18,7 +17,6 @@ export default function Create({ categories }) {
   const [price, setPrice] = useState("");
   const [image, setImage] = useState("");
   const [imageURL, setImageURL] = useState("");
-
   //Const
   const newCategory = {
     title: title.toLowerCase(),
@@ -47,13 +45,13 @@ export default function Create({ categories }) {
       <h2>Create {isCategorySelected ? "Dish" : "Category"}</h2>
       <div className="drop-container">
         <Dropdown items={categories} hook={[category, setCategory]}>
-          Category
+          Category ( optional )
         </Dropdown>
       </div>
       <form onSubmit={handleUpload}>
         <p className="admin-instructions">
-          - (optional) If you want to create a dish , select a category <br />-
-          Otherwise fill all fields to create a category
+          - (optional) In case you want to create a dish , first select a
+          category <br />- Otherwise fill all fields to create a category
           <br />- All fields are required
         </p>
         <FormCategory

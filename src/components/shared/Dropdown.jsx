@@ -7,26 +7,23 @@ export default function Dropdown({ items, hook, children }) {
   const [itemSelected, setItemSelected] = hook;
   const ListItems = items.map((item) => {
     return (
-      <DropdownItem
-        key={item.id}
-        onClick={() => {
-          setItemSelected(item);
-          setIsOpen(false);
-        }}
-      >
+      <DropdownItem key={item.id} onClick={() => onSelect(item)}>
         {item.title}
       </DropdownItem>
     );
   });
+
+  function onSelect(item) {
+    setItemSelected(item);
+    setIsOpen(false);
+  }
 
   return (
     <div className="dropdown">
       <button
         type="button"
         className="btn select-ghost"
-        onClick={() => {
-          setIsOpen(!isOpen);
-        }}
+        onClick={() => setIsOpen(!isOpen)}
       >
         <h4>
           {itemSelected === "" ? `Select ${children}` : itemSelected.title}{" "}
@@ -40,15 +37,10 @@ export default function Dropdown({ items, hook, children }) {
             <p className="dropdown-item">no elements found</p>
           )}
           <ul>
-            {ListItems}
-            <DropdownItem
-              onClick={() => {
-                setItemSelected("");
-                setIsOpen(false);
-              }}
-            >
-              -
+            <DropdownItem onClick={() => onSelect("")}>
+              " remove selection "
             </DropdownItem>
+            {ListItems}
           </ul>
         </div>
       )}

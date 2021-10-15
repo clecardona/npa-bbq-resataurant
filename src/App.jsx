@@ -24,7 +24,7 @@ export default function App() {
           <Route path="/menu/:categoryID" component={CategoryPage} />
           <Route path="/contact" component={ContactPage} />
           <Route path="/admin" component={AdminPage} />
-          <Route path="/" component={Page404} />
+          <Route path="*" component={Page404} />
         </Switch>
         <Footer />
       </Router>
