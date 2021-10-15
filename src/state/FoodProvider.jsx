@@ -1,18 +1,23 @@
-import { createContext, useState } from "react";
-import useFetch from "../hooks/useFetch";
+//NPM Packages
+import { createContext, useContext, useReducer } from "react";
+
+//Project files
+import foodReducer from "./foodReducer";
 
 // Properties
-export const FoodContext = createContext("hello");
-
-const categories = [];
+export const FoodContext = createContext(null);
 
 export function FoodProvider({ children }) {
-  // Local state
-  //const [state, setstate] = useState(initialState);
-  const categories = useFetch("categories");
-  //const dishes = useFetch("dishes");
+  const [food, dispatch] = useReducer(foodReducer, []);
 
   return (
-    <FoodContext.Provider value={categories}>{children}</FoodContext.Provider>
+    <FoodContext.Provider value={{ food, dispatch }}>
+      {children}
+    </FoodContext.Provider>
   );
+}
+
+export function useFood() {
+  const context = useContext(FoodContext);
+  return context;
 }

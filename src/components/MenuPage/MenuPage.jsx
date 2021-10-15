@@ -1,15 +1,12 @@
-import { useContext } from "react";
-
+import { useFood } from "../../state/FoodProvider";
 import useFetch from "../../hooks/useFetch";
 import Spinner from "../shared/Spinner";
 import BoxError from "../shared/BoxError";
-import { FoodContext } from "../../state/FoodProvider";
 
 export default function MenuPage() {
-  const value = useContext(FoodContext);
-  console.log(value);
   // Hooks
-  const categories = useFetch("categories");
+  const { dispatch } = useFood();
+  const categories = useFetch("categories", dispatch);
 
   const MenuItems = categories.data.map((item) => {
     return (

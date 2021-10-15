@@ -1,11 +1,13 @@
 import useFetch from "../../hooks/useFetch";
+import { useFood } from "../../state/FoodProvider";
 import { getRelatedFood } from "../../scripts/foodMethods";
 import Spinner from "../shared/Spinner";
 import BoxError from "../shared/BoxError";
 
 export default function Products({ category }) {
   // Hook
-  const dishes = useFetch("dishes");
+  const { dispatch } = useFood();
+  const dishes = useFetch("dishes", dispatch);
 
   // Const
   const listOfDishes = getRelatedFood(dishes.data, category.id);

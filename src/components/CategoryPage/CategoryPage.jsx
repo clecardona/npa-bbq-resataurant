@@ -1,7 +1,9 @@
 // NPM Packages
 import { useParams, NavLink } from "react-router-dom";
 
+// Project Files
 import useFetch from "../../hooks/useFetch";
+import { useFood } from "../../state/FoodProvider";
 import { getCurrentCategory } from "../../scripts/foodMethods";
 import Products from "./Products";
 import ButtonBack from "../shared/ButtonBack";
@@ -10,7 +12,8 @@ import BoxError from "../shared/BoxError";
 
 export default function CategoryPage() {
   // Hooks
-  const categories = useFetch("categories");
+  const { dispatch } = useFood();
+  const categories = useFetch("categories", dispatch);
   const { categoryID } = useParams();
 
   //Const

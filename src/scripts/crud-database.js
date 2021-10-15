@@ -6,9 +6,7 @@ import { getFirestore } from "firebase/firestore/lite";
 // The database to perform operations
 const database = getFirestore(firebaseInstance);
 
-/*--------------CREATE -------------*/
 //CREATE CATEGORY
-// Create a category using upload image from client computer
 export async function createCategory(someCategory, someImage) {
   let newImageURL = "";
   if (typeof someImage === "object") {
@@ -22,7 +20,6 @@ export async function createCategory(someCategory, someImage) {
 }
 
 //CREATE DISH
-//Create a dish
 export async function createDish(someDish, someImage) {
   let newImageURL = "";
   if (typeof someImage === "object") {
@@ -35,11 +32,7 @@ export async function createDish(someDish, someImage) {
   alert(newDish.title + " added to category # " + newDish.categoryID);
 }
 
-/*-------------- READ -------------*/
-
-/*-------------- UPDATE -------------*/
 //UPDATE CATEGORY
-//Update category
 export async function updateCat(newData, newImage, category) {
   let updatedCategory = { ...category };
 
@@ -57,13 +50,11 @@ export async function updateCat(newData, newImage, category) {
       updatedCategory.imageURL = newImage;
     }
   }
-  console.log(updatedCategory);
   await modifyDoc(database, "categories", category.id, updatedCategory);
   alert(updatedCategory.title + " successfully updated ");
 }
 
 //UPDATE DISH
-//Update dish
 export async function updateDish(newData, newImage, dish) {
   let updatedDish = { ...dish };
 
@@ -87,14 +78,11 @@ export async function updateDish(newData, newImage, dish) {
       updatedDish.imageURL = newImage;
     }
   }
-  console.log(updatedDish);
   await modifyDoc(database, "dishes", dish.id, updatedDish);
   alert(updatedDish.title + " successfully updated ");
 }
 
-/*-------------- DELETE -------------*/
 // Delete element by id
 export async function deleteElement(path, id) {
   delDoc(database, path, id);
-  console.log(path, " deleted", id);
 }

@@ -1,7 +1,8 @@
 //NPM Packages
-import { useState, useContext } from "react";
-
+import { useState } from "react";
+//Project Files
 import useFetch from "../../hooks/useFetch";
+import { useFood } from "../../state/FoodProvider";
 import BoxError from "../shared/BoxError";
 import Create from "./Create";
 import Edit from "./Edit";
@@ -11,8 +12,9 @@ import Spinner from "../shared/Spinner";
 export default function AdminPage() {
   //Hooks
   const [selection, setSelection] = useState("create");
-  const categories = useFetch("categories");
-  const dishes = useFetch("dishes");
+  const { dispatch } = useFood();
+  const categories = useFetch("categories", dispatch);
+  const dishes = useFetch("dishes", dispatch);
 
   return (
     <div className="page-admin">

@@ -1,17 +1,19 @@
 import { useParams, NavLink } from "react-router-dom";
 
 import useFetch from "../../hooks/useFetch";
+import { useFood } from "../../state/FoodProvider";
 import { getRelatedItem } from "../../scripts/foodMethods";
+
 import Description from "./Description";
 import Ingredients from "./Ingredients";
-
 import BoxError from "../shared/BoxError";
 import ButtonBack from "../shared/ButtonBack";
 import Spinner from "../shared/Spinner";
 
 export default function ProductPage() {
   // Hooks
-  const dishes = useFetch("dishes");
+  const { dispatch } = useFood();
+  const dishes = useFetch("dishes", dispatch);
   const { categoryID } = useParams();
   const { productID } = useParams();
 

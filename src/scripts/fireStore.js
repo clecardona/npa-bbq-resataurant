@@ -7,8 +7,6 @@ import {
   doc,
   deleteDoc,
 } from "firebase/firestore/lite";
-import { getFirestore } from "firebase/firestore/lite";
-import firebaseInstance from "./firebase";
 
 // Create file
 export async function createDoc(db, path, data) {
