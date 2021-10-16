@@ -8,7 +8,7 @@ import FormDish from "./FormDish";
 import FormCategory from "./FormCategory";
 import UploadImage from "../shared/UploadImage";
 
-export default function Create({ categories }) {
+export default function Create({ categories, onRefresh }) {
   //Hooks
   const [category, setCategory] = useState("");
   const [title, setTitle] = useState("");
@@ -44,7 +44,11 @@ export default function Create({ categories }) {
     <section className="section-admin">
       <h2>Create {isCategorySelected ? "Dish" : "Category"}</h2>
       <div className="drop-container">
-        <Dropdown items={categories} hook={[category, setCategory]}>
+        <Dropdown
+          items={categories}
+          hook={[category, setCategory]}
+          onRefresh={onRefresh}
+        >
           Category ( optional )
         </Dropdown>
       </div>

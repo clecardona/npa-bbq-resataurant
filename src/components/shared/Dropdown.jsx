@@ -2,9 +2,11 @@ import { useState } from "react";
 import DropdownItem from "./DropdownItem";
 import down from "../../assets/icns/down.svg";
 
-export default function Dropdown({ items, hook, children }) {
+export default function Dropdown({ items, hook, children, onRefresh }) {
   const [isOpen, setIsOpen] = useState(false);
   const [itemSelected, setItemSelected] = hook;
+
+  console.log(items, itemSelected.title);
   const ListItems = items.map((item) => {
     return (
       <DropdownItem key={item.id} onClick={() => onSelect(item)}>
@@ -23,7 +25,10 @@ export default function Dropdown({ items, hook, children }) {
       <button
         type="button"
         className="btn select-ghost"
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={() => {
+          setIsOpen(!isOpen);
+          onRefresh();
+        }}
       >
         <h4>
           {itemSelected === "" ? `Select ${children}` : itemSelected.title}{" "}
@@ -38,7 +43,7 @@ export default function Dropdown({ items, hook, children }) {
           )}
           <ul>
             <DropdownItem onClick={() => onSelect("")}>
-              " remove selection "
+              - remove selection -
             </DropdownItem>
             {ListItems}
           </ul>

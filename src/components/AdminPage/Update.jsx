@@ -7,7 +7,7 @@ import FormDish from "./FormDish";
 import FormCategory from "./FormCategory";
 import UploadImage from "../shared/UploadImage";
 
-export default function UpdateForm({ dataSelected, categories }) {
+export default function UpdateForm({ dataSelected, categories, onRefresh }) {
   //Hooks
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
