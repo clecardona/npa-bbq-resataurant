@@ -13,8 +13,8 @@ export default function AdminPage() {
   //Hooks
   const [selection, setSelection] = useState("create");
   const { dispatch } = useFood();
-  const categories = useFetch("categories", dispatch);
-  const dishes = useFetch("dishes", dispatch);
+  const categories = useFetch("categories", dispatch, selection);
+  const dishes = useFetch("dishes", dispatch, [selection]); //TODO - pass a refresh from Dropdown in the depency array
 
   return (
     <div className="page-admin">

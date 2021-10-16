@@ -8,7 +8,7 @@ export default function Dropdown({ items, hook, children }) {
   const ListItems = items.map((item) => {
     return (
       <DropdownItem key={item.id} onClick={() => onSelect(item)}>
-        {item.title}
+        {item.title} {/* TODO- manage if the item is desynchronized */}
       </DropdownItem>
     );
   });

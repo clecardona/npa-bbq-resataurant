@@ -3,7 +3,7 @@ import { getFirestore } from "firebase/firestore/lite";
 import firebaseInstance from "../scripts/firebase";
 import { getCollection } from "../scripts/fireStore";
 
-export default function useFetch(collection, dispatch) {
+export default function useFetch(collection, dispatch, dependencyArray) {
   // STATES
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
@@ -27,7 +27,7 @@ export default function useFetch(collection, dispatch) {
   //hook
   useEffect(() => {
     fetchData(database, collection);
-  }, [database, collection]);
+  }, [dependencyArray]);
 
   return { data, error, loading, setData };
 }
