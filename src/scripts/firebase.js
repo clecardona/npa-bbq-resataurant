@@ -1,11 +1,11 @@
 import { initializeApp } from "firebase/app";
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-  authDomain: "yet-bbq.firebaseapp.com",
-  projectId: "yet-bbq",
-  storageBucket: "yet-bbq.appspot.com",
-  messagingSenderId: "1086421258954",
-  appId: "1:1086421258954:web:00a450ec1d260dce935a33",
+  authDomain: "bbq-restaurant-2a1ce.firebaseapp.com",
+  projectId: "bbq-restaurant-2a1ce",
+  storageBucket: "bbq-restaurant-2a1ce.appspot.com",
+  messagingSenderId: "567848685067",
+  appId: "1:567848685067:web:c4046583dacac842d1c10e",
 };
 
 const firebaseInstance = initializeApp(firebaseConfig);
