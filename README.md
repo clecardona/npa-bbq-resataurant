@@ -12,7 +12,7 @@ This project was bootstrapped with Create React App.
 ## 1. Content
 
 This is a BBQ Restaurant website.
-[Go to website](https://yet-bbq.web.app/)
+[Go to website](https://bbq-restaurant-2a1ce.web.app/)
 
 ## 2. Setup
 
